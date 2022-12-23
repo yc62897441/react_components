@@ -1,9 +1,11 @@
+import { useState } from 'react'
 import { createGlobalStyle } from 'styled-components'
 
 // import SliderBanner from './components/SliderBanner'
 // import HeaderOverly from './contains/HeaderOverly'
 // import Blog from './components/Blog'
-import ComingSoon from './components/ComingSoon'
+// import ComingSoon from './components/ComingSoon'
+import HideScrollbar from './components/HideSrollbar'
 
 const GlobalStyle = createGlobalStyle`
   * {
@@ -55,19 +57,26 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+
+/* 開啟/隱藏 scrollbar */
+body {
+  overflow: ${({ isHideSrollbar }) => (isHideSrollbar ? 'hidden' : 'scroll')};
+}
 `
 
 function App() {
+    const [isHideSrollbar, setIsHideSrollbar] = useState(false)
     return (
         <>
-            <GlobalStyle />
+            <GlobalStyle isHideSrollbar={isHideSrollbar} />
             <div>
                 App.js
                 {/* <HeaderOverly /> */}
             </div>
             {/* <SliderBanner /> */}
             {/* <Blog /> */}
-            <ComingSoon />
+            {/* <ComingSoon /> */}
+            <HideScrollbar setIsHideSrollbar={setIsHideSrollbar} />
         </>
     )
 }

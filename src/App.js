@@ -1,7 +1,8 @@
 import { createGlobalStyle } from 'styled-components'
 
 // import SliderBanner from './components/SliderBanner'
-import HeaderOverly from './contains/HeaderOverly'
+// import HeaderOverly from './contains/HeaderOverly'
+import Blog from './components/Blog'
 
 const GlobalStyle = createGlobalStyle`
   * {
@@ -61,9 +62,10 @@ function App() {
             <GlobalStyle />
             <div>
                 App.js
-                <HeaderOverly />
+                {/* <HeaderOverly /> */}
             </div>
             {/* <SliderBanner /> */}
+            <Blog />
         </>
     )
 }

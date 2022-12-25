@@ -5,7 +5,9 @@ import { createGlobalStyle } from 'styled-components'
 // import HeaderOverly from './contains/HeaderOverly'
 // import Blog from './components/Blog'
 // import ComingSoon from './components/ComingSoon'
-import HideScrollbar from './components/HideSrollbar'
+// import HideScrollbar from './components/HideSrollbar'
+import Buttons from './components/Bottuns' 
+
 
 const GlobalStyle = createGlobalStyle`
   * {
@@ -76,7 +78,8 @@ function App() {
             {/* <SliderBanner /> */}
             {/* <Blog /> */}
             {/* <ComingSoon /> */}
-            <HideScrollbar setIsHideSrollbar={setIsHideSrollbar} />
+            {/* <HideScrollbar setIsHideSrollbar={setIsHideSrollbar} /> */}
+            <Buttons />
         </>
     )
 }

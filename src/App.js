@@ -8,7 +8,8 @@ import { createGlobalStyle } from 'styled-components'
 // import HideScrollbar from './components/HideSrollbar'
 // import Buttons from './components/Bottuns'
 // import BorderStyle from './components/BorderStyle'
-import ScrollDownShow from './contains/ScrollDownShow'
+// import ScrollDownShow from './contains/ScrollDownShow'
+import A from './contains/SliderAnimation'
 
 const GlobalStyle = createGlobalStyle`
   * {
@@ -82,7 +83,8 @@ function App() {
             {/* <HideScrollbar setIsHideSrollbar={setIsHideSrollbar} /> */}
             {/* <Buttons /> */}
             {/* <BorderStyle /> */}
-            <ScrollDownShow />
+            {/* <ScrollDownShow /> */}
+            <A />
         </>
     )
 }

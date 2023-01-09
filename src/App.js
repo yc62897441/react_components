@@ -9,7 +9,8 @@ import { createGlobalStyle } from 'styled-components'
 // import Buttons from './components/Bottuns'
 // import BorderStyle from './components/BorderStyle'
 // import ScrollDownShow from './contains/ScrollDownShow'
-import A from './contains/SliderAnimation'
+// import A from './contains/SliderAnimation'
+import Dragable from './contains/Draggable'
 
 const GlobalStyle = createGlobalStyle`
   * {
@@ -84,7 +85,8 @@ function App() {
             {/* <Buttons /> */}
             {/* <BorderStyle /> */}
             {/* <ScrollDownShow /> */}
-            <A />
+            {/* <A /> */}
+            <Dragable />
         </>
     )
 }

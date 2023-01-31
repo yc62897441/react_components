@@ -1,16 +1,15 @@
 import { useState } from 'react'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { createGlobalStyle } from 'styled-components'
 
-// import SliderBanner from './components/SliderBanner'
-// import HeaderOverly from './contains/HeaderOverly'
-// import Blog from './components/Blog'
-// import ComingSoon from './components/ComingSoon'
-// import HideScrollbar from './components/HideSrollbar'
-// import Buttons from './components/Bottuns'
-// import BorderStyle from './components/BorderStyle'
-// import ScrollDownShow from './contains/ScrollDownShow'
-// import A from './contains/SliderAnimation'
-import Dragable from './contains/Draggable'
+import Dragable from './contains/Draggable.jsx'
+import HeaderOverly from './contains/HeaderOverly.jsx'
+import ScrollDownShow from './contains/ScrollDownShow.jsx'
+import SingleComponents from './contains/SingleComponents.jsx'
+import SliderAnimation from './contains/SliderAnimation.jsx'
+
+import HideScrollbar from './components/HideSrollbar.jsx'
+import ScrollToTop from './components/ScrollToTop.jsx'
 
 const GlobalStyle = createGlobalStyle`
   * {
@@ -65,6 +64,7 @@ table {
 
 /* 開啟/隱藏 scrollbar */
 body {
+  position: relative;
   overflow: ${({ isHideSrollbar }) => (isHideSrollbar ? 'hidden' : 'scroll')};
 }
 `
@@ -74,19 +74,16 @@ function App() {
     return (
         <>
             <GlobalStyle isHideSrollbar={isHideSrollbar} />
-            <div>
-                App.js
-                {/* <HeaderOverly /> */}
-            </div>
-            {/* <SliderBanner /> */}
-            {/* <Blog /> */}
-            {/* <ComingSoon /> */}
-            {/* <HideScrollbar setIsHideSrollbar={setIsHideSrollbar} /> */}
-            {/* <Buttons /> */}
-            {/* <BorderStyle /> */}
-            {/* <ScrollDownShow /> */}
-            {/* <A /> */}
-            <Dragable />
+            <BrowserRouter>
+                <ScrollToTop />
+                <Routes>
+                    <Route path="/dragable" element={<Dragable />} />
+                    <Route path="/headerOverly" element={<HeaderOverly />} />
+                    <Route path="/scrollDownShow" element={<ScrollDownShow />} />
+                    <Route path="/singleComponents" element={<SingleComponents setIsHideSrollbar={setIsHideSrollbar} />} />
+                    <Route path="/sliderAnimation" element={<SliderAnimation />} />
+                </Routes>
+            </BrowserRouter>
         </>
     )
 }

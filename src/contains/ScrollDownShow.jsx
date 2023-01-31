@@ -1,9 +1,11 @@
 import { useState } from 'react'
 import styled, { css } from 'styled-components'
+import Header from '../components/Header.jsx'
 
 const ScrollDownShowWrapper = styled.div`
     display: flex;
     flex-direction: column;
+    margin-top: 165px;
     margin-bottom: 500px;
 `
 
@@ -83,14 +85,18 @@ function ScrollDownShow() {
     }
 
     return (
-        <ScrollDownShowWrapper>
-            {dummyData.length > 0 &&
-                dummyData.map((item, index) => (
-                    <Aaa className="Aaa" isActive={item.id === currentId} key={item.id} data-id={item.id} onClick={() => setCurrentId(item.id)}>
-                        {item.name}
-                    </Aaa>
-                ))}
-        </ScrollDownShowWrapper>
+        <>
+            <Header />
+            <h1>請滾動滑鼠滾輪</h1>
+            <ScrollDownShowWrapper>
+                {dummyData.length > 0 &&
+                    dummyData.map((item, index) => (
+                        <Aaa className="Aaa" isActive={item.id === currentId} key={item.id} data-id={item.id} onClick={() => setCurrentId(item.id)}>
+                            {item.name}
+                        </Aaa>
+                    ))}
+            </ScrollDownShowWrapper>
+        </>
     )
 }
 

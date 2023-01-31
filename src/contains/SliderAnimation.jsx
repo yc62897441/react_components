@@ -1,6 +1,7 @@
 import styled, { keyframes } from 'styled-components'
-import WaveBackground from './WaveBackground'
-import TitleWrapperNoBaseline from '../components/miniComponents/TitleWrapperNoBaseline'
+import Header from '../components/Header.jsx'
+import WaveBackground from '../components/WaveBackground.jsx'
+import TitleWrapperNoBaseline from '../components/miniComponents/TitleWrapperNoBaseline.jsx'
 
 const SlideWrapper = styled.div`
     position: relative;
@@ -10,6 +11,7 @@ const SlideWrapper = styled.div`
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    margin-top: 165px;
     overflow: hidden;
     background-color: #ffffff;
 `
@@ -307,6 +309,7 @@ const dummyData = [
 function SliderAnimation() {
     return (
         <>
+            <Header />
             <SlideWrapper>
                 <SlideMainWrapper>
                     {/* 產生各大類 Wrapper，如「學業」、「體育」... */}

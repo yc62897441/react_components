@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import styled from 'styled-components'
+import Header from '../components/Header.jsx'
 
 const HeaderWrapper = styled.header`
     position: relative;
@@ -7,6 +8,8 @@ const HeaderWrapper = styled.header`
     width: 100vw;
     height: 60px;
     padding: 10px 0;
+    margin-top: 165px;
+
     z-index: 999;
 `
 
@@ -62,6 +65,9 @@ function HeaderOverly() {
 
     return (
         <>
+            <Header />
+            {/* TODO: 功能展示請完善 */}
+            <h1>???</h1>
             <HeaderWrapper>
                 <Div>
                     <Button onClick={() => handleToggle()}>Show modal(at the same while triggering MobileNavOverly)</Button>

@@ -1,8 +1,10 @@
 import { useEffect } from 'react'
 import styled from 'styled-components'
+import Header from '../components/Header.jsx'
 
 const DragableWrapper = styled.header`
     width: 100%;
+    margin-top: 165px;
     border: 1px solid black;
 `
 
@@ -21,6 +23,7 @@ const DragObject = styled.header`
 
 // 參考: https://ithelp.ithome.com.tw/articles/10057106
 // TODO: 目前只能把 dragObject 拖到 dragContainer 中的最後一個位子，是否可以拖到中間，需再研究
+// TODO: 因為是用 appendChild，所以自然會到最後一個。看能不能用 'dragenter' 找出切入點?
 function Dragable() {
     let dragObjects = []
     let dragContainers = []
@@ -110,24 +113,28 @@ function Dragable() {
     }
 
     return (
-        <DragableWrapper>
-            <DragContainer id="dragContainer1" className="dragContainer">
-                <DragObject id="dragObject1" className="dragObject">
-                    DragObject 1
-                </DragObject>
-                <DragObject id="dragObject2" className="dragObject">
-                    DragObject 2
-                </DragObject>
-                <DragObject id="dragObject3" className="dragObject">
-                    DragObject 3
-                </DragObject>
-                <DragObject id="dragObject4" className="dragObject">
-                    DragObject 4
-                </DragObject>
-            </DragContainer>
-            <br />
-            <DragContainer id="dragContainer2" className="dragContainer"></DragContainer>
-        </DragableWrapper>
+        <>
+            <Header />
+            <h1>請拖曳 DragObject 到不同的 DragContainer(區塊)中</h1>
+            <DragableWrapper>
+                <DragContainer id="dragContainer1" className="dragContainer">
+                    <DragObject id="dragObject1" className="dragObject">
+                        DragObject 1
+                    </DragObject>
+                    <DragObject id="dragObject2" className="dragObject">
+                        DragObject 2
+                    </DragObject>
+                    <DragObject id="dragObject3" className="dragObject">
+                        DragObject 3
+                    </DragObject>
+                    <DragObject id="dragObject4" className="dragObject">
+                        DragObject 4
+                    </DragObject>
+                </DragContainer>
+                <br />
+                <DragContainer id="dragContainer2" className="dragContainer"></DragContainer>
+            </DragableWrapper>
+        </>
     )
 }
 

@@ -5,6 +5,7 @@ import BorderStyle from '../components/BorderStyle.jsx'
 import Bottuns from '../components/Bottuns.jsx'
 import ComingSoon from '../components/ComingSoon.jsx'
 import HideSrollbar from '../components/HideSrollbar.jsx'
+import PieChart from '../components/PieChart.jsx'
 import SliderBanner from '../components/SliderBanner.jsx'
 
 const SingleComponentsWrapper = styled.div`
@@ -46,6 +47,9 @@ function SingleComponents({ setIsHideSrollbar }) {
                 <SeperateLine />
 
                 <SliderBanner />
+                <SeperateLine />
+
+                <PieChart />
                 <SeperateLine />
             </SingleComponentsWrapper>
         </>

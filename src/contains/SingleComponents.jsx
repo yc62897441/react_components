@@ -7,6 +7,7 @@ import ComingSoon from '../components/ComingSoon.jsx'
 import HideSrollbar from '../components/HideSrollbar.jsx'
 import PieChart from '../components/PieChart.jsx'
 import SliderBanner from '../components/SliderBanner.jsx'
+import Titles from '../components/Titles.jsx'
 
 const SingleComponentsWrapper = styled.div`
     width: 100%;
@@ -50,6 +51,9 @@ function SingleComponents({ setIsHideSrollbar }) {
                 <SeperateLine />
 
                 <PieChart />
+                <SeperateLine />
+
+                <Titles />
                 <SeperateLine />
             </SingleComponentsWrapper>
         </>

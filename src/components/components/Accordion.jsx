@@ -89,7 +89,7 @@ function Accordion() {
                                 <AccordionTitleContainer isActive={isActive} onClick={() => handleShow(item.id)}>
                                     <h1>{item.title}</h1>
                                     <div>
-                                        <i class="fa fa-arrow-down" aria-hidden="true"></i>
+                                        <i className="fa fa-arrow-down" aria-hidden="true"></i>
                                     </div>
                                 </AccordionTitleContainer>
                                 <AccordionContentContainer isShow={isShow}>

@@ -66,3 +66,4 @@ function Buttons() {
 }
 
 export default Buttons
+export { Button1, Button2 }

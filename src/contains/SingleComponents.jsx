@@ -5,6 +5,7 @@ import BorderStyle from '../components/BorderStyle.jsx'
 import Bottuns from '../components/Bottuns.jsx'
 import ComingSoon from '../components/ComingSoon.jsx'
 import HideSrollbar from '../components/HideSrollbar.jsx'
+import Modal from '../components/Modal.jsx'
 import PieChart from '../components/PieChart.jsx'
 import SliderBanner from '../components/SliderBanner.jsx'
 import Titles from '../components/Titles.jsx'
@@ -54,6 +55,9 @@ function SingleComponents({ setIsHideSrollbar }) {
                 <SeperateLine />
 
                 <Titles />
+                <SeperateLine />
+
+                <Modal />
                 <SeperateLine />
             </SingleComponentsWrapper>
         </>

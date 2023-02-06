@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import styled from 'styled-components'
-import { Button1 } from './Bottuns'
+import { Button1 } from './components/Bottuns'
 
 const ModalsWrapper = styled.div`
     position: relative;

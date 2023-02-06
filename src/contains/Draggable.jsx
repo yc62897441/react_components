@@ -2,19 +2,19 @@ import { useEffect } from 'react'
 import styled from 'styled-components'
 import Header from '../components/Header.jsx'
 
-const DragableWrapper = styled.header`
+const DragableWrapper = styled.div`
     width: 100%;
     margin-top: 165px;
     border: 1px solid black;
 `
 
-const DragContainer = styled.header`
+const DragContainer = styled.div`
     width: 100%;
     padding: 25px 0;
     border: 1px solid red;
 `
 
-const DragObject = styled.header`
+const DragObject = styled.div`
     width: 100px;
     height: 100px;
     margin: 10px;

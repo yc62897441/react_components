@@ -4,6 +4,7 @@ import { createGlobalStyle } from 'styled-components'
 
 import Dragable from './contains/Draggable.jsx'
 import HeaderOverly from './contains/HeaderOverly.jsx'
+import Homepage from './contains/Homepage.jsx'
 import ScrollDownShow from './contains/ScrollDownShow.jsx'
 import SingleComponents from './contains/SingleComponents.jsx'
 import SliderAnimation from './contains/SliderAnimation.jsx'
@@ -82,6 +83,7 @@ function App() {
                     <Route path="/scrollDownShow" element={<ScrollDownShow />} />
                     <Route path="/singleComponents" element={<SingleComponents setIsHideSrollbar={setIsHideSrollbar} />} />
                     <Route path="/sliderAnimation" element={<SliderAnimation />} />
+                    <Route path="/" element={<Homepage />} />
                 </Routes>
             </BrowserRouter>
         </>

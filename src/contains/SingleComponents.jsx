@@ -1,8 +1,9 @@
 import styled from 'styled-components'
 import Header from '../components/Header.jsx'
+import Accordion from '../components/components/Accordion.jsx'
 import Blog from '../components/Blog.jsx'
 import BorderStyle from '../components/BorderStyle.jsx'
-import Bottuns from '../components/Bottuns.jsx'
+import Bottuns from '../components/components/Bottuns.jsx'
 import ComingSoon from '../components/ComingSoon.jsx'
 import HideSrollbar from '../components/HideSrollbar.jsx'
 import Modal from '../components/Modal.jsx'
@@ -58,6 +59,9 @@ function SingleComponents({ setIsHideSrollbar }) {
                 <SeperateLine />
 
                 <Modal />
+                <SeperateLine />
+
+                <Accordion />
                 <SeperateLine />
             </SingleComponentsWrapper>
         </>

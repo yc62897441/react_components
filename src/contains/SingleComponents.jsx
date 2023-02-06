@@ -4,6 +4,7 @@ import Accordion from '../components/components/Accordion.jsx'
 import Blog from '../components/Blog.jsx'
 import BorderStyle from '../components/BorderStyle.jsx'
 import Bottuns from '../components/components/Bottuns.jsx'
+import Carousel from '../components/Carousel.jsx'
 import ComingSoon from '../components/ComingSoon.jsx'
 import HideSrollbar from '../components/HideSrollbar.jsx'
 import Modal from '../components/Modal.jsx'
@@ -62,6 +63,9 @@ function SingleComponents({ setIsHideSrollbar }) {
                 <SeperateLine />
 
                 <Accordion />
+                <SeperateLine />
+
+                <Carousel />
                 <SeperateLine />
             </SingleComponentsWrapper>
         </>

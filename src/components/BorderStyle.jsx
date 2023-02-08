@@ -1,4 +1,12 @@
 import styled, { keyframes } from 'styled-components'
+import spadesIcon from '../assets/img/border/symbol-of-spades.png'
+import cloverIcon from '../assets/img/border/clover.jpg'
+import heartIcon from '../assets/img/border/hearts.png'
+import diamondIcon from '../assets/img/border/diamond.png'
+import borderDiamondsIcon from '../assets/img/border/border-diamonds.png'
+import leavesGcccfa618d from '../assets/img/border/leaves-gcccfa618d_1280.png'
+import leavesG4268479c6 from '../assets/img/border/leaves-g4268479c6_640.png'
+
 
 const BorderStyleWrapper = styled.div`
     display: flex;
@@ -174,6 +182,41 @@ const BorderStyle5 = styled.div`
     }
 `
 
+const BorderStyle6 = styled.div`
+    width: 500px;
+    height: 300px;
+    padding: 20px;
+    border: 10px solid;
+    border-image: linear-gradient(0deg, rgba(255, 175, 70, 1) 0%, rgba(255, 255, 255, 1) 100%) 10;
+`
+
+const BorderStyle7 = styled.div`
+    width: 512px;
+    height: 512px;
+    border: 30px solid transparent;
+    border-image-source: url(${borderDiamondsIcon});
+    border-image-slice: 15;
+    border-image-width: 15px;
+    border-image-outset: 0px;
+    border-image-repeat: round;
+    border-image-repeat: stretch;
+    border-image-repeat: repeat;
+`
+
+const BorderStyle8 = styled.div`
+    width: 600px;
+    height: auto;
+    border: 50px solid transparent;
+    padding: 20px;
+    border-image-source: url(${leavesGcccfa618d});
+    border-image-slice: 150;
+    border-image-width: 50px;
+    border-image-outset: 0px;
+    border-image-repeat: stretch;
+    border-image-repeat: repeat;
+    border-image-repeat: round;
+`
+
 function BorderStyle() {
     return (
         <BorderStyleWrapper>
@@ -190,6 +233,39 @@ function BorderStyle() {
             <br />
 
             <BorderStyle5>BorderStyle5</BorderStyle5>
+            <br />
+
+            <BorderStyle6>BorderStyle6</BorderStyle6>
+            <br />
+
+            <BorderStyle7>
+                <p>BorderStyle7</p>
+                <br />
+                <p>border-image-source 引入圖檔，最好是九宮格圖片。</p>
+                <br />
+                <p>border-image-slice 決定圖檔中切取出 4 個角落的大小；fill 則是圖檔中間部分要不在要容器中顯示。</p>
+                <br />
+                <p>border-image-width 決定圖檔在 border 上的寬度，建議與 border 一致。</p>
+                <br />
+                <p>border-image-outset 決定 border-image 與中心內容的距離，可以把 border-image 往外撐開但是 border-image 在 DOM 上不會佔有空間。</p>
+                <br />
+                <p>border-image-repeat 決定圖檔切取出 4 個邊，在 border 上是要重複(repeat)、或是延伸(stretch)、或是 round 顯示</p>
+            </BorderStyle7>
+            <br />
+
+            <BorderStyle8>
+                <p>BorderStyle8</p>
+                <br />
+                <p>border-image-source 引入圖檔，最好是九宮格圖片。</p>
+                <br />
+                <p>border-image-slice 決定圖檔中切取出 4 個角落的大小；fill 則是圖檔中間部分要不在要容器中顯示。</p>
+                <br />
+                <p>border-image-width 決定圖檔在 border 上的寬度，建議與 border 一致。</p>
+                <br />
+                <p>border-image-outset 決定 border-image 與中心內容的距離，可以把 border-image 往外撐開但是 border-image 在 DOM 上不會佔有空間。</p>
+                <br />
+                <p>border-image-repeat 決定圖檔切取出 4 個邊，在 border 上是要重複(repeat)、或是延伸(stretch)、或是 round 顯示</p>
+            </BorderStyle8>
             <br />
         </BorderStyleWrapper>
     )

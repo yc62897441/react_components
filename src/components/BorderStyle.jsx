@@ -53,7 +53,6 @@ const linearGradientMove = keyframes`
 const BorderStyle2 = styled.div`
     width: 300px;
     height: 300px;
-
     background: linear-gradient(90deg, #333 50%, transparent 0) repeat-x, linear-gradient(90deg, #333 50%, transparent 0) repeat-x, linear-gradient(0deg, #333 50%, transparent 0) repeat-y, linear-gradient(0deg, #333 50%, transparent 0) repeat-y;
     background-size: 4px 1px, 4px 1px, 1px 4px, 1px 4px;
     background-position: 0 0, 0 100%, 0 0, 100% 0;
@@ -68,7 +67,6 @@ const BorderStyle3 = styled.div`
     height: 300px;
     outline: 1px solid #333;
     outline-offset: -1px;
-
     background: linear-gradient(90deg, #333 50%, transparent 0) repeat-x, linear-gradient(90deg, #333 50%, transparent 0) repeat-x, linear-gradient(0deg, #333 50%, transparent 0) repeat-y, linear-gradient(0deg, #333 50%, transparent 0) repeat-y;
     background-size: 4px 1px, 4px 1px, 1px 4px, 1px 4px;
     background-position: 0 0, 0 100%, 0 0, 100% 0;
@@ -179,13 +177,13 @@ const BorderStyle5 = styled.div`
 function BorderStyle() {
     return (
         <BorderStyleWrapper>
-            <BorderStyle1>BorderStyle1</BorderStyle1>
+            <BorderStyle1>BorderStyle1 請將滑鼠游標滑入</BorderStyle1>
             <br />
 
-            <BorderStyle2>BorderStyle2</BorderStyle2>
+            <BorderStyle2>BorderStyle2 請將滑鼠游標滑入</BorderStyle2>
             <br />
 
-            <BorderStyle3>BorderStyle3</BorderStyle3>
+            <BorderStyle3>BorderStyle3 請將滑鼠游標滑入</BorderStyle3>
             <br />
 
             <BorderStyle4>BorderStyle4</BorderStyle4>

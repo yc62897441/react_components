@@ -4,7 +4,7 @@ import Header from '../components/Header.jsx'
 
 const DragableWrapper = styled.div`
     width: 100%;
-    margin-top: 165px;
+    margin-top: 105px;
     border: 1px solid black;
 `
 

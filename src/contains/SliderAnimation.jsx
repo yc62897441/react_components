@@ -11,7 +11,7 @@ const SlideWrapper = styled.div`
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    margin-top: 165px;
+    margin-top: 105px;
     overflow: hidden;
     background-color: #ffffff;
 `

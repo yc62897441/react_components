@@ -17,7 +17,7 @@ import ContentBackground3 from '../assets/img/ScrollDownShow2/pexels-tobias-bjø
 
 const ScrollDownShowWrapper = styled.div`
     width: 100%;
-    padding-top: 165px;
+    padding-top: 105px;
 `
 
 // Banner
@@ -30,7 +30,7 @@ const BannerWrapper = styled.div`
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: calc(100vh - 165px);
+    height: calc(100vh - 105px);
 
     img {
         position: absolute;

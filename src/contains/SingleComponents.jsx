@@ -16,7 +16,7 @@ import Titles from '../components/Titles.jsx'
 
 const SingleComponentsWrapper = styled.div`
     width: 100%;
-    margin-top: 165px;
+    margin-top: 105px;
 `
 
 const SeperateLine = styled.div`

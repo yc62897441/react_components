@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
@@ -7,8 +8,8 @@ const HeaderWrapper = styled.div`
     display: flex;
     flex-direction: row;
     width: 100vw;
-    height: 165px;
-    padding: 60px;
+    height: ${({ showHeader }) => (showHeader ? '105px' : 'auto')};
+    padding: ${({ showHeader }) => (showHeader ? '30px' : '10px 30px')};
     background-color: #1abc9c;
     z-index: 9998;
 
@@ -25,8 +26,32 @@ const HeaderWrapper = styled.div`
 `
 
 function Header() {
+    let windowScrollY = 0
+    const [showHeader, setShowHeader] = useState(true)
+
+    // How to Remove an Event listener in React
+    // https://bobbyhadz.com/blog/react-remove-event-listener
+    useEffect(() => {
+        const countt = function () {
+            windowScrollY = window.scrollY
+            console.log(windowScrollY)
+            if (windowScrollY > 105) {
+                setShowHeader(false)
+            } else {
+                setShowHeader(true)
+            }
+        }
+        window.addEventListener('scroll', countt)
+
+        // 👇️ remove the event listener when the component unmounts
+        // 避免每次頁面中任何 useState 更新或是 re-render 時，都建立並累積一堆重複的事件監聽器。
+        return () => {
+            window.removeEventListener('scroll', countt)
+        }
+    }, [])
+
     return (
-        <HeaderWrapper>
+        <HeaderWrapper showHeader={showHeader}>
             <Link to="/dragable">dragable</Link>
             <Link to="/headerOverly">headerOverly</Link>
             <Link to="/scrollDownShow">scrollDownShow</Link>

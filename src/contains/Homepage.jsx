@@ -3,7 +3,7 @@ import Header from '../components/Header.jsx'
 
 const HomepageWrapper = styled.div`
     width: 100%;
-    margin-top: 165px;
+    margin-top: 105px;
 `
 
 function Homepage() {

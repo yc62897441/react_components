@@ -5,7 +5,7 @@ import Header from '../components/Header.jsx'
 const ScrollDownShowWrapper = styled.div`
     display: flex;
     flex-direction: column;
-    margin-top: 165px;
+    margin-top: 105px;
     margin-bottom: 500px;
 `
 

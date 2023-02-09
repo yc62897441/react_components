@@ -130,3 +130,4 @@ function Titles() {
 }
 
 export default Titles
+export { Title2 }

@@ -6,9 +6,9 @@ import Dragable from './contains/Draggable.jsx'
 import HeaderOverly from './contains/HeaderOverly.jsx'
 import Homepage from './contains/Homepage.jsx'
 import ScrollDownShow from './contains/ScrollDownShow.jsx'
+import ScrollDownShow2 from './contains/ScrollDownShow2.jsx'
 import SingleComponents from './contains/SingleComponents.jsx'
 import SliderAnimation from './contains/SliderAnimation.jsx'
-
 import HideScrollbar from './components/HideSrollbar.jsx'
 import ScrollToTop from './components/ScrollToTop.jsx'
 
@@ -81,6 +81,7 @@ function App() {
                     <Route path="/dragable" element={<Dragable />} />
                     <Route path="/headerOverly" element={<HeaderOverly />} />
                     <Route path="/scrollDownShow" element={<ScrollDownShow />} />
+                    <Route path="/scrollDownShow2" element={<ScrollDownShow2 />} />
                     <Route path="/singleComponents" element={<SingleComponents setIsHideSrollbar={setIsHideSrollbar} />} />
                     <Route path="/sliderAnimation" element={<SliderAnimation />} />
                     <Route path="/" element={<Homepage />} />

@@ -34,7 +34,6 @@ function Header() {
     useEffect(() => {
         const countt = function () {
             windowScrollY = window.scrollY
-            console.log(windowScrollY)
             if (windowScrollY > 105) {
                 setShowHeader(false)
             } else {

@@ -41,7 +41,6 @@ function HeaderOverly() {
 
     // 手機版尺寸時，點選  <NavToggleBarWrapper /> 顯示 <MobileNavOverly>
     function handleToggle() {
-        console.log('asdas')
         setIsToggleOn((n) => !n)
     }
 

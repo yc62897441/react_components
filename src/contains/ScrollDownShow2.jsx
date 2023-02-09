@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import Header from '../components/Header.jsx'
 import { Title2 } from '../components/Titles.jsx'
@@ -225,20 +225,30 @@ function ScrollDownShow2() {
     const [currentId, setCurrentId] = useState(0)
     let windowScrollY = 0
 
-    // FIXME: 會執行多次 scroll 事件，可能是 useState 多次 re-render，或是建立多個事件監聽器(改用 ref 試試)
-    addEventListener('scroll', function () {
-        windowScrollY = window.scrollY
-        const StageWrappers = document.querySelectorAll('.StageWrapper')
-        StageWrappers.forEach((item) => {
-            if (Math.abs(Number(item.dataset.id) - currentId) <= 1) {
+    // How to Remove an Event listener in React
+    // https://bobbyhadz.com/blog/react-remove-event-listener
+    useEffect(() => {
+        const listenScroll = function () {
+            windowScrollY = window.scrollY
+            const StageWrappers = document.querySelectorAll('.StageWrapper')
+            let lastShowItemId = 0
+
+            StageWrappers.forEach((item) => {
                 const itemHeight = findDomElementYPosition(item)
                 const itemId = Number(item.dataset.id)
                 if (windowScrollY >= itemHeight - 450) {
-                    setCurrentId(Number(itemId))
+                    lastShowItemId = Number(itemId)
                 }
-            }
-        })
-    })
+            })
+            setCurrentId(lastShowItemId)
+        }
+        window.addEventListener('scroll', listenScroll, false)
+
+        // 避免每次頁面中任何 useState 更新或是 re-render 時，都建立並累積一堆重複的事件監聽器。
+        return () => {
+            window.removeEventListener('scroll', listenScroll, false)
+        }
+    }, [])
 
     // 尋找元素在畫面上的高度位置
     // 參考來源：https://www.quirksmode.org/js/findpos.html

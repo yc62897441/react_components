@@ -1,19 +1,17 @@
 import { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import Header from '../components/Header.jsx'
+import Footer from '../components/Footer.jsx'
 import { Title2 } from '../components/Titles.jsx'
 import TitleWrapperNoBaseline from '../components/miniComponents/TitleWrapperNoBaseline.jsx'
 import TextWrapper from '../components/miniComponents/TextWrapper.jsx'
 import BannerImg from '../assets/img/ScrollDownShow2/pexels-sebastian-beck-3545807.jpg'
-import BoltIcon from '../assets/img/ScrollDownShow2/bolt.png'
-import LightIcon from '../assets/img/ScrollDownShow2/light.png'
+import SnowflakeIcon from '../assets/img/ScrollDownShow2/snowflake.png'
 import ContentImg1 from '../assets/img/ScrollDownShow2/pexels-arthouse-studio-4338103.jpg'
 import ContentImg2 from '../assets/img/ScrollDownShow2/pexels-matt-hardy-2602543.jpg'
 import ContentImg3 from '../assets/img/ScrollDownShow2/pexels-kristoffer-brink-jonsson-1690470.jpg'
 import ContentImg4 from '../assets/img/ScrollDownShow2/pexels-visit-almaty-848612.jpg'
-import ContentBackground from '../assets/img/ScrollDownShow2/background-ge52ccf758_1280.png'
-import ContentBackground2 from '../assets/img/ScrollDownShow2/snowflakes-ge90a81b3f_640.png'
-import ContentBackground3 from '../assets/img/ScrollDownShow2/pexels-tobias-bjørkli-1900203.jpg'
+import ContentBackground from '../assets/img/ScrollDownShow2/pexels-tobias-bjørkli-1900203.jpg'
 
 const ScrollDownShowWrapper = styled.div`
     width: 100%;
@@ -117,8 +115,9 @@ const StageWrapper = styled.div`
         width: 30px;
         height: 30px;
         background-color: rgba(255, 255, 255, 1);
+        padding: 2px;
         border-radius: 50%;
-        border: ${({ isActive }) => (isActive ? '2px solid rgba(0, 90, 170, 0.8)' : '2px solid rgba(0, 90, 170, 0.2)')};
+        border: ${({ isActive }) => (isActive ? '3px solid rgba(0, 90, 170, 0.8)' : '3px solid rgba(0, 90, 170, 0.2)')};
         transition: all 1s;
 
         img {
@@ -272,24 +271,24 @@ function ScrollDownShow2() {
         <ScrollDownShowWrapper>
             <Header />
             <BannerWrapper>
-                <img src={BannerImg} alt="" srcset="" />
+                <img src={BannerImg} alt="" srcSet="" />
                 <Title2_1>There will be the slogan of this company.</Title2_1>
             </BannerWrapper>
             <ContentsWrapper>
                 <ContentsBackgroundWrapper>
-                    <img src={ContentBackground3} alt="" srcset="" />
+                    <img src={ContentBackground} alt="" srcSet="" />
                 </ContentsBackgroundWrapper>
                 {dummyData.length > 0 &&
                     dummyData.map((data, index) => (
                         <ContentWrapper key={data.id}>
                             <StageWrapper data-id={data.id} isActive={currentId >= data.id ? true : false} className="StageWrapper">
                                 <div>
-                                    <img src={LightIcon} alt="" srcset="" />
+                                    <img src={SnowflakeIcon} alt="" srcSet="" />
                                 </div>
                             </StageWrapper>
                             <ContentContainer index={index} isActive={currentId >= data.id ? true : false}>
                                 <ContentImgWrapper>
-                                    <img src={data.img} alt="" srcset="" />
+                                    <img src={data.img} alt="" srcSet="" />
                                 </ContentImgWrapper>
                                 <br />
                                 <TitleWrapperNoBaseline>
@@ -302,6 +301,7 @@ function ScrollDownShow2() {
                         </ContentWrapper>
                     ))}
             </ContentsWrapper>
+            <Footer />
         </ScrollDownShowWrapper>
     )
 }

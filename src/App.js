@@ -9,6 +9,8 @@ import ScrollDownShow from './contains/ScrollDownShow.jsx'
 import ScrollDownShow2 from './contains/ScrollDownShow2.jsx'
 import SingleComponents from './contains/SingleComponents.jsx'
 import SliderAnimation from './contains/SliderAnimation.jsx'
+import Touch from './contains/Touch.jsx'
+import TouchBlog from './contains/TouchBlog.jsx'
 import HideScrollbar from './components/HideSrollbar.jsx'
 import ScrollToTop from './components/ScrollToTop.jsx'
 
@@ -84,6 +86,8 @@ function App() {
                     <Route path="/scrollDownShow2" element={<ScrollDownShow2 />} />
                     <Route path="/singleComponents" element={<SingleComponents setIsHideSrollbar={setIsHideSrollbar} />} />
                     <Route path="/sliderAnimation" element={<SliderAnimation />} />
+                    <Route path="/touch" element={<Touch />} />
+                    <Route path="/touchBlog" element={<TouchBlog />} />
                     <Route path="/" element={<Homepage />} />
                 </Routes>
             </BrowserRouter>

@@ -6,6 +6,7 @@ const HeaderWrapper = styled.div`
     position: fixed;
     top: 0px;
     display: flex;
+    flex-wrap: wrap;
     flex-direction: row;
     width: 100vw;
     height: ${({ showHeader }) => (showHeader ? '105px' : 'auto')};
@@ -56,6 +57,8 @@ function Header() {
             <Link to="/scrollDownShow">scrollDownShow</Link>
             <Link to="/singleComponents">singleComponents</Link>
             <Link to="/sliderAnimation">sliderAnimation</Link>
+            <Link to="/touch">touch</Link>
+            <Link to="/touchBlog">touchBlog</Link>
         </HeaderWrapper>
     )
 }

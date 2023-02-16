@@ -54,6 +54,7 @@ function Header() {
         <HeaderWrapper showHeader={showHeader}>
             <Link to="/dragable">dragable</Link>
             <Link to="/headerOverly">headerOverly</Link>
+            <Link to="/mouseEvent">mouseEvent</Link>
             <Link to="/scrollDownShow">scrollDownShow</Link>
             <Link to="/singleComponents">singleComponents</Link>
             <Link to="/sliderAnimation">sliderAnimation</Link>

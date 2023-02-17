@@ -25,6 +25,9 @@ const CounterButton = styled.div`
     cursor: pointer;
 `
 
+// Mouse Event 小筆記
+// https://medium.com/@shizukuichi/mouse-event-%E5%B0%8F%E7%AD%86%E8%A8%98-feb5dd866b0
+// https://codepen.io/sh1zuku/pen/yrxYqx
 function MouseEvent() {
     const [count, setCount] = useState(0)
     const mouseX = useRef(0)
@@ -33,10 +36,13 @@ function MouseEvent() {
     const offsetY = useRef(0)
     const isDown = useRef(false)
     let div = ''
+    
+    // 移動範圍的左；上邊界，超出邊界時要修正 offsetX、offsetY，避免 DOM 元件跑出銀幕範圍再也操作不到
+    const leftBoundary = 5
+    const upBoundary = 105 + 5
 
     useEffect(() => {
         div = document.querySelector('.mydiv')
-
         div.addEventListener('mousedown', mousedownEvent, false)
         window.addEventListener('mouseup', mouseupEvent, false)
 
@@ -58,6 +64,16 @@ function MouseEvent() {
         if (isDown.current) {
             offsetX.current = offsetX.current + event.pageX - mouseX.current // 前已累積移動量 + 結束處 - 開始處 = 最新已累積移動量
             offsetY.current = offsetY.current + event.pageY - mouseY.current
+
+            // 移動範圍的左；上邊界，超出邊界時要修正 offsetX、offsetY，避免 DOM 元件跑出銀幕範圍再也操作不到
+            if (event.pageX <= leftBoundary) {
+                offsetX.current = offsetX.current + Math.abs(leftBoundary - event.pageX) + div.offsetWidth
+                div.style.transform = `translate(${offsetX.current}px,${offsetY.current}px)`
+            }
+            if (event.pageY < upBoundary) {
+                offsetY.current = offsetY.current + Math.abs(upBoundary - event.pageY) + div.offsetHeight
+                div.style.transform = `translate(${offsetX.current}px,${offsetY.current}px)`
+            }
         }
         isDown.current = false
         window.removeEventListener('mousemove', mousemoveEvent, false)

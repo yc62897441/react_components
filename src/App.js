@@ -5,6 +5,7 @@ import { createGlobalStyle } from 'styled-components'
 import Dragable from './contains/Draggable.jsx'
 import HeaderOverly from './contains/HeaderOverly.jsx'
 import Homepage from './contains/Homepage.jsx'
+import LazyLoading from './contains/LazyLoading.jsx'
 import MouseEvent from './contains/MouseEvent.jsx'
 import ScrollDownShow from './contains/ScrollDownShow.jsx'
 import ScrollDownShow2 from './contains/ScrollDownShow2.jsx'
@@ -83,6 +84,7 @@ function App() {
                 <Routes>
                     <Route path="/dragable" element={<Dragable />} />
                     <Route path="/headerOverly" element={<HeaderOverly />} />
+                    <Route path="/lazyLoading" element={<LazyLoading />} />
                     <Route path="/mouseEvent" element={<MouseEvent />} />
                     <Route path="/scrollDownShow" element={<ScrollDownShow />} />
                     <Route path="/scrollDownShow2" element={<ScrollDownShow2 />} />

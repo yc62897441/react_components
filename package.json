@@ -1,6 +1,7 @@
 {
   "name": "react_components",
   "version": "1.0.0",
+  "private": true,
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -24,11 +25,15 @@
   },
   "dependencies": {
     "babel-preset-es2015": "^6.24.1",
+    "exceljs": "^4.3.0",
+    "ol": "^7.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-input-files": "^1.2.0",
     "react-router-dom": "^6.8.0",
     "react-scripts": "^5.0.1",
-    "styled-components": "^5.3.6"
+    "styled-components": "^5.3.6",
+    "xlsx": "^0.18.5"
   },
   "browserslist": {
     "production": [

@@ -7,6 +7,7 @@ import HeaderOverly from './contains/HeaderOverly.jsx'
 import Homepage from './contains/Homepage.jsx'
 import LazyLoading from './contains/LazyLoading.jsx'
 import MouseEvent from './contains/MouseEvent.jsx'
+import OpenLayers from './contains/Openlayers.jsx'
 import ScrollDownShow from './contains/ScrollDownShow.jsx'
 import ScrollDownShow2 from './contains/ScrollDownShow2.jsx'
 import SingleComponents from './contains/SingleComponents.jsx'
@@ -15,6 +16,7 @@ import Touch from './contains/Touch.jsx'
 import TouchBlog from './contains/TouchBlog.jsx'
 import HideScrollbar from './components/HideSrollbar.jsx'
 import ScrollToTop from './components/ScrollToTop.jsx'
+import Xlsx from './contains/Xlsx.jsx'
 
 const GlobalStyle = createGlobalStyle`
   * {
@@ -86,12 +88,14 @@ function App() {
                     <Route path="/headerOverly" element={<HeaderOverly />} />
                     <Route path="/lazyLoading" element={<LazyLoading />} />
                     <Route path="/mouseEvent" element={<MouseEvent />} />
+                    <Route path="/openLayers" element={<OpenLayers />} />
                     <Route path="/scrollDownShow" element={<ScrollDownShow />} />
                     <Route path="/scrollDownShow2" element={<ScrollDownShow2 />} />
                     <Route path="/singleComponents" element={<SingleComponents setIsHideSrollbar={setIsHideSrollbar} />} />
                     <Route path="/sliderAnimation" element={<SliderAnimation />} />
                     <Route path="/touch" element={<Touch />} />
                     <Route path="/touchBlog" element={<TouchBlog />} />
+                    <Route path="/xlsx" element={<Xlsx />} />
                     <Route path="/" element={<Homepage />} />
                 </Routes>
             </BrowserRouter>

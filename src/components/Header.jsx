@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
+export const headerHeight = '150px'
+
 const HeaderWrapper = styled.div`
     position: fixed;
     top: 0px;
@@ -9,7 +11,7 @@ const HeaderWrapper = styled.div`
     flex-wrap: wrap;
     flex-direction: row;
     width: 100vw;
-    height: ${({ showHeader }) => (showHeader ? '105px' : 'auto')};
+    height: auto;
     padding: ${({ showHeader }) => (showHeader ? '30px' : '10px 30px')};
     background-color: #1abc9c;
     z-index: 9998;

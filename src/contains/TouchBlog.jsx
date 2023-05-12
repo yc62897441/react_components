@@ -8,10 +8,11 @@ import img4 from '../assets/img/touchBlog/004.png'
 import img5 from '../assets/img/touchBlog/005.png'
 import img6 from '../assets/img/touchBlog/006.png'
 import img7 from '../assets/img/touchBlog/007.png'
+import { headerHeight } from '../components/Header.jsx'
 
 const TouchBlogWrapper = styled.div`
     width: 100%;
-    margin-top: 105px;
+    margin-top: ${headerHeight};
 `
 
 const BlogWrapper = styled.section`
@@ -82,7 +83,8 @@ const NewsWrapper = styled.div`
     width: 100%;
     flex-shrink: 0;
     transition: all 0.5s ease-out;
-    transform: ${({ movePx }) => (movePx > 10 ? `translateX(${movePx}%)` : `translateX(${movePx}%)`)};
+    transform: ${({ movePx }) =>
+        movePx > 10 ? `translateX(${movePx}%)` : `translateX(${movePx}%)`};
     padding: 5px;
     background-color: #ffffff;
 
@@ -174,7 +176,8 @@ function TouchBlog() {
 
     // 手機滑動事件參數
     let slideNewsWrapper = '' // 用來儲存 querySelector DOM <SlideNewsWrapper>
-    let touch = 'ontouchstart' in window || (window.DocumentTouch && document instanceof DocumentTouch)
+    let touch =
+        'ontouchstart' in window || (window.DocumentTouch && document instanceof DocumentTouch)
     let startPos = '' // 開始 touch 滑動的位置
     let endPos = '' // 結束 touch 滑動的位置
     let isScrolling = '' // 這個引數判斷是垂直滾動還是水平滾動
@@ -340,10 +343,20 @@ function TouchBlog() {
 
                         {/* 建立新聞 */}
                         {sliderShowNewsNum > 0 && (
-                            <SlideNewsWrapper id="slideNewsWrapper" sliderShowNewsNum={sliderShowNewsNum}>
+                            <SlideNewsWrapper
+                                id="slideNewsWrapper"
+                                sliderShowNewsNum={sliderShowNewsNum}
+                            >
                                 {dummyNews.length > 0 &&
                                     dummyNews.map((news, index) => (
-                                        <NewsWrapper className="element" index={index} sliderShowNewsNum={sliderShowNewsNum} totalStep={totalStep.current} movePx={movePx} key={news.id}>
+                                        <NewsWrapper
+                                            className="element"
+                                            index={index}
+                                            sliderShowNewsNum={sliderShowNewsNum}
+                                            totalStep={totalStep.current}
+                                            movePx={movePx}
+                                            key={news.id}
+                                        >
                                             {news.name}
                                             <img src={news.img} alt="" srcSet="" />
                                         </NewsWrapper>
@@ -356,7 +369,17 @@ function TouchBlog() {
                     </SlideContentWrapper>
 
                     {/* 建立點點 */}
-                    <SlideDotsWrapper>{totalStep.current > 0 && Array.from({ length: totalStep.current }, (_value, index) => <Dot currentStep={currentStep.current} index={index} key={index} onClick={() => handleClickDot(index)} />)}</SlideDotsWrapper>
+                    <SlideDotsWrapper>
+                        {totalStep.current > 0 &&
+                            Array.from({ length: totalStep.current }, (_value, index) => (
+                                <Dot
+                                    currentStep={currentStep.current}
+                                    index={index}
+                                    key={index}
+                                    onClick={() => handleClickDot(index)}
+                                />
+                            ))}
+                    </SlideDotsWrapper>
                 </SlideWrapper>
             </BlogWrapper>
         </TouchBlogWrapper>

@@ -2,6 +2,7 @@ import styled, { keyframes } from 'styled-components'
 import Header from '../components/Header.jsx'
 import WaveBackground from '../components/WaveBackground.jsx'
 import TitleWrapperNoBaseline from '../components/miniComponents/TitleWrapperNoBaseline.jsx'
+import { headerHeight } from '../components/Header.jsx'
 
 const SlideWrapper = styled.div`
     position: relative;
@@ -11,7 +12,7 @@ const SlideWrapper = styled.div`
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    margin-top: 105px;
+    margin-top: ${headerHeight};
     overflow: hidden;
     background-color: #ffffff;
 `
@@ -128,7 +129,8 @@ const ContentContainer = styled.div`
     line-height: 16px;
     font-size: 14px;
     font-weight: 400;
-    font-family: '微軟正黑體', 'Microsoft JhengHei', 'Segoe UI Semibold', 'Segoe UI', 'Lucida Grande';
+    font-family: '微軟正黑體', 'Microsoft JhengHei', 'Segoe UI Semibold', 'Segoe UI',
+        'Lucida Grande';
 
     div {
         display: flex;
@@ -323,13 +325,19 @@ function SliderAnimation() {
                                             <ContentWrapper key={content.id}>
                                                 <ContentContainer>
                                                     <div>
-                                                        <span>{content.amount}</span> <p>{content.unit}</p>
+                                                        <span>{content.amount}</span>{' '}
+                                                        <p>{content.unit}</p>
                                                     </div>
                                                     <p>{content.name}</p>
                                                 </ContentContainer>
                                                 {/* 隨機產生 Dot 的大小、Bar 的高度 */}
-                                                <Dot width={Math.floor(Math.random() * 10 + 10)}></Dot>
-                                                <Bar height={content.CSSHeight} width={Math.floor(Math.random() * 3 + 1)}></Bar>
+                                                <Dot
+                                                    width={Math.floor(Math.random() * 10 + 10)}
+                                                ></Dot>
+                                                <Bar
+                                                    height={content.CSSHeight}
+                                                    width={Math.floor(Math.random() * 3 + 1)}
+                                                ></Bar>
                                             </ContentWrapper>
                                         ))}
                                 </ContentsWrapper>

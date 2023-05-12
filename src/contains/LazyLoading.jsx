@@ -1,10 +1,11 @@
 import useLazyLoading from '../hook/useLazyLoading.js'
 import styled from 'styled-components'
 import Header from '../components/Header.jsx'
+import { headerHeight } from '../components/Header.jsx'
 
 const LazyLoadingWrapper = styled.div`
     width: 100%;
-    margin-top: 105px;
+    margin-top: ${headerHeight};
 `
 
 const ImgsWrapper = styled.div`

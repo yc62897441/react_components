@@ -1,11 +1,12 @@
 import { useState } from 'react'
 import styled, { css } from 'styled-components'
 import Header from '../components/Header.jsx'
+import { headerHeight } from '../components/Header.jsx'
 
 const ScrollDownShowWrapper = styled.div`
     display: flex;
     flex-direction: column;
-    margin-top: 105px;
+    margin-top: ${headerHeight};
     margin-bottom: 500px;
 `
 
@@ -91,7 +92,13 @@ function ScrollDownShow() {
             <ScrollDownShowWrapper>
                 {dummyData.length > 0 &&
                     dummyData.map((item, index) => (
-                        <Aaa className="Aaa" isActive={item.id === currentId} key={item.id} data-id={item.id} onClick={() => setCurrentId(item.id)}>
+                        <Aaa
+                            className="Aaa"
+                            isActive={item.id === currentId}
+                            key={item.id}
+                            data-id={item.id}
+                            onClick={() => setCurrentId(item.id)}
+                        >
                             {item.name}
                         </Aaa>
                     ))}

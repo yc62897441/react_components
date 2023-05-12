@@ -1,14 +1,16 @@
 import { useState, useEffect, useRef } from 'react'
 import styled from 'styled-components'
 import Header from '../components/Header.jsx'
+import { headerHeight } from '../components/Header.jsx'
 
 const MouseEventWrapper = styled.div`
     width: 100%;
     height: 100%;
-    padding-top: 105px;
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
+    margin-top: ${headerHeight};
+    padding-top: 105px;
     border: 2px solid black;
 `
 
@@ -36,7 +38,7 @@ function MouseEvent() {
     const offsetY = useRef(0)
     const isDown = useRef(false)
     let div = ''
-    
+
     // 移動範圍的左；上邊界，超出邊界時要修正 offsetX、offsetY，避免 DOM 元件跑出銀幕範圍再也操作不到
     const leftBoundary = 5
     const upBoundary = 105 + 5
@@ -67,11 +69,13 @@ function MouseEvent() {
 
             // 移動範圍的左；上邊界，超出邊界時要修正 offsetX、offsetY，避免 DOM 元件跑出銀幕範圍再也操作不到
             if (event.pageX <= leftBoundary) {
-                offsetX.current = offsetX.current + Math.abs(leftBoundary - event.pageX) + div.offsetWidth
+                offsetX.current =
+                    offsetX.current + Math.abs(leftBoundary - event.pageX) + div.offsetWidth
                 div.style.transform = `translate(${offsetX.current}px,${offsetY.current}px)`
             }
             if (event.pageY < upBoundary) {
-                offsetY.current = offsetY.current + Math.abs(upBoundary - event.pageY) + div.offsetHeight
+                offsetY.current =
+                    offsetY.current + Math.abs(upBoundary - event.pageY) + div.offsetHeight
                 div.style.transform = `translate(${offsetX.current}px,${offsetY.current}px)`
             }
         }
@@ -93,11 +97,15 @@ function MouseEvent() {
     }
 
     return (
-        <MouseEventWrapper>
+        <>
             <Header />
-            <CounterButton onClick={handleCountPlus1}>count + 1。測試 useState re-render。目前 count = {count}</CounterButton>
-            <DragTarget className="mydiv">drag me</DragTarget>
-        </MouseEventWrapper>
+            <MouseEventWrapper>
+                <CounterButton onClick={handleCountPlus1}>
+                    count + 1。測試 useState re-render。目前 count = {count}
+                </CounterButton>
+                <DragTarget className="mydiv">drag me</DragTarget>
+            </MouseEventWrapper>
+        </>
     )
 }
 

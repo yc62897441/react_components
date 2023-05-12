@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import Header from '../components/Header.jsx'
 import { Button1 } from '../components/components/Bottuns.jsx'
 import { config } from '../config.js' // google api key 放在這
+import { headerHeight } from '../components/Header.jsx'
 
 // 匯入 excel
 import * as XLSX from 'xlsx/xlsx.mjs'
@@ -13,7 +14,7 @@ import ExcelJs from 'exceljs'
 
 const XlsxWrapper = styled.div`
     width: 100%;
-    margin-top: 155px;
+    margin-top: ${headerHeight};
 `
 
 function Xlsx() {
@@ -23,12 +24,12 @@ function Xlsx() {
 
     // 匯入 excel
     // 參考：React上傳文件使用react-input-files讀取Excel js-xlsx
-    //https://ucamc.com/311-react%E4%B8%8A%E5%82%B3%E6%96%87%E4%BB%B6%E4%BD%BF%E7%94%A8react-input-files%E8%AE%80%E5%8F%96excel-js-xlsx
+    // https://ucamc.com/311-react%E4%B8%8A%E5%82%B3%E6%96%87%E4%BB%B6%E4%BD%BF%E7%94%A8react-input-files%E8%AE%80%E5%8F%96excel-js-xlsx
     function onImportExcel(files) {
         // 獲取上傳的文件對象
-        //const { files } = file.target; // 通過FileReader對象讀取文件
+        // const { files } = file.target; // 通過FileReader對象讀取文件
         const fileReader = new FileReader()
-        //console.log(fileReader);
+        // console.log(fileReader);
         for (let index = 0; index < files.length; index++) {
             fileReader.name = files[index].name
         }

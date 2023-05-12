@@ -4,10 +4,11 @@ import Header from '../components/Header.jsx'
 import Banner1 from '../assets/img/sliderBanner/1200px-Default_Banner.jpg'
 import Banner2 from '../assets/img/sliderBanner/1200px-Default_Banner2.jpg'
 import Banner3 from '../assets/img/sliderBanner/1200px-Default_Banner3.jpg'
+import { headerHeight } from '../components/Header.jsx'
 
 const TouchWrapper = styled.div`
     width: 100%;
-    margin-top: 105px;
+    margin-top: ${headerHeight};
 `
 
 const SliderWrapper = styled.div`
@@ -50,7 +51,8 @@ const ImgWrapper = styled.div`
     width: 100%;
     height: 100%;
     flex-shrink: 0;
-    transform: ${({ movePx }) => (movePx > 10 ? `translateX(${movePx}%)` : `translateX(${movePx}%)`)};
+    transform: ${({ movePx }) =>
+        movePx > 10 ? `translateX(${movePx}%)` : `translateX(${movePx}%)`};
     transition-duration: 0.5s;
 `
 
@@ -107,7 +109,8 @@ function Touch() {
 
     // 手機滑動事件參數
     let sliderContainer = '' // 用來儲存 querySelector DOM <SliderContainer>
-    let touch = 'ontouchstart' in window || (window.DocumentTouch && document instanceof DocumentTouch)
+    let touch =
+        'ontouchstart' in window || (window.DocumentTouch && document instanceof DocumentTouch)
     let startPos = '' // 開始 touch 滑動的位置
     let endPos = '' // 結束 touch 滑動的位置
     let isScrolling = '' // 這個引數判斷是垂直滾動還是水平滾動
@@ -119,7 +122,10 @@ function Touch() {
             setMovePx(100 * -1 * (currentStep.current - 1 + 1))
             currentStep.current = currentStep.current + 1
             nextTimeRef.current = dummyBannerArray[currentStep.current].time
-        } else if (directionRef.current === 'right' && currentStep.current === dummyBannerArray.length) {
+        } else if (
+            directionRef.current === 'right' &&
+            currentStep.current === dummyBannerArray.length
+        ) {
             setMovePx(100 * -1 * (currentStep.current - 1 - 1))
             currentStep.current = currentStep.current - 1
             directionRef.current = 'left'
@@ -174,7 +180,8 @@ function Touch() {
                 if (endPos.x - startPos.x > 10) {
                     if (currentStep.current > 1) handleClickDot(currentStep.current - 2)
                 } else if (endPos.x - startPos.x < -10) {
-                    if (currentStep.current < totalImgNum.current) handleClickDot(currentStep.current - 0)
+                    if (currentStep.current < totalImgNum.current)
+                        handleClickDot(currentStep.current - 0)
                 }
             }
         }
@@ -201,7 +208,13 @@ function Touch() {
                 <DotWrapper>
                     {dummyBannerArray.length > 0 &&
                         Array.from({ length: dummyBannerArray.length }, (_value, index) => {
-                            return <Dot key={index} isActive={currentStep.current === index + 1} onClick={() => handleClickDot(index)}></Dot>
+                            return (
+                                <Dot
+                                    key={index}
+                                    isActive={currentStep.current === index + 1}
+                                    onClick={() => handleClickDot(index)}
+                                ></Dot>
+                            )
                         })}
                 </DotWrapper>
             </SliderWrapper>

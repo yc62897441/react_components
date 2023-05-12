@@ -1,9 +1,10 @@
 import styled from 'styled-components'
 import Header from '../components/Header.jsx'
+import { headerHeight } from '../components/Header.jsx'
 
 const HomepageWrapper = styled.div`
     width: 100%;
-    margin-top: 105px;
+    margin-top: ${headerHeight};
 `
 
 function Homepage() {

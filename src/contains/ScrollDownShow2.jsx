@@ -13,9 +13,12 @@ import ContentImg3 from '../assets/img/ScrollDownShow2/pexels-kristoffer-brink-j
 import ContentImg4 from '../assets/img/ScrollDownShow2/pexels-visit-almaty-848612.jpg'
 import ContentBackground from '../assets/img/ScrollDownShow2/pexels-tobias-bjørkli-1900203.jpg'
 
+import { headerHeight } from '../components/Header.jsx'
+
 const ScrollDownShowWrapper = styled.div`
     width: 100%;
     padding-top: 105px;
+    margin-top: ${headerHeight};
 `
 
 // Banner
@@ -50,7 +53,12 @@ const Title2_1 = styled(Title2)`
     padding: 100px;
     font-size: 80px;
     border: none;
-    background-image: radial-gradient(circle farthest-corner at center, rgba(0, 90, 170, 1) 0%, rgba(0, 90, 170, 1) 40%, rgba(179, 220, 255, 0.4) 90%);
+    background-image: radial-gradient(
+        circle farthest-corner at center,
+        rgba(0, 90, 170, 1) 0%,
+        rgba(0, 90, 170, 1) 40%,
+        rgba(179, 220, 255, 0.4) 90%
+    );
 
     :after {
         position: absolute;
@@ -58,7 +66,11 @@ const Title2_1 = styled(Title2)`
         content: '';
         width: 100%;
         height: 100%;
-        background-image: radial-gradient(circle farthest-corner at center, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.1) 100%);
+        background-image: radial-gradient(
+            circle farthest-corner at center,
+            rgba(255, 255, 255, 0.8) 0%,
+            rgba(255, 255, 255, 0.1) 100%
+        );
         opacity: 0.5;
         z-index: -9;
     }
@@ -104,7 +116,8 @@ const StageWrapper = styled.div`
     transform: translateX(-50%);
     width: 5px;
     height: 100%;
-    background-color: ${({ isActive }) => (isActive ? 'rgba(0, 90, 170, 0.8)' : 'rgba(0, 90, 170, 0.2)')};
+    background-color: ${({ isActive }) =>
+        isActive ? 'rgba(0, 90, 170, 0.8)' : 'rgba(0, 90, 170, 0.2)'};
     transition: all 1s;
 
     div {
@@ -117,7 +130,8 @@ const StageWrapper = styled.div`
         background-color: rgba(255, 255, 255, 1);
         padding: 2px;
         border-radius: 50%;
-        border: ${({ isActive }) => (isActive ? '3px solid rgba(0, 90, 170, 0.8)' : '3px solid rgba(0, 90, 170, 0.2)')};
+        border: ${({ isActive }) =>
+            isActive ? '3px solid rgba(0, 90, 170, 0.8)' : '3px solid rgba(0, 90, 170, 0.2)'};
         transition: all 1s;
 
         img {
@@ -198,25 +212,29 @@ const dummyData = [
         id: 1,
         title: 'Glacier Scenery',
         img: ContentImg1,
-        content: 'Jökulsárlón is Iceland’s most famous glacier lagoon. Conveniently located in the southeast by Route 1, about halfway between the Skaftafell Nature Reserve and Höfn, it is a popular stop for those traveling along the South Coast or around the Ring Road of the country.',
+        content:
+            'Jökulsárlón is Iceland’s most famous glacier lagoon. Conveniently located in the southeast by Route 1, about halfway between the Skaftafell Nature Reserve and Höfn, it is a popular stop for those traveling along the South Coast or around the Ring Road of the country.',
     },
     {
         id: 2,
         title: 'Local Culture',
         img: ContentImg2,
-        content: 'Aside from their Viking roots, Icelanders have a strong culture of food, literature and the arts. The capital of Reykjavik has galleries, bookstores, theatres and a symphony orchestra. In fact, Icelandic music has become its own genre, combining pop and folk. Taking in a local gig is a wonderful way to embrace the culture and atmosphere of this unique place.',
+        content:
+            'Aside from their Viking roots, Icelanders have a strong culture of food, literature and the arts. The capital of Reykjavik has galleries, bookstores, theatres and a symphony orchestra. In fact, Icelandic music has become its own genre, combining pop and folk. Taking in a local gig is a wonderful way to embrace the culture and atmosphere of this unique place.',
     },
     {
         id: 3,
         title: 'Nature Hiking',
         img: ContentImg3,
-        content: 'Some of Iceland’s most popular hiking routes include the Laugavegur trail between Landmannalaugar and Þórsmörk, Fimmvörðuháls, Lónsöræfi, Hornstrandir, and  Vatnaleið. ',
+        content:
+            'Some of Iceland’s most popular hiking routes include the Laugavegur trail between Landmannalaugar and Þórsmörk, Fimmvörðuháls, Lónsöræfi, Hornstrandir, and  Vatnaleið. ',
     },
     {
         id: 4,
         title: 'Skiing Sport',
         img: ContentImg4,
-        content: 'In the list of the best ski resorts in Iceland (Ísland), the ski resort Bláfjöll is top with 3.0 out of 5 stars. The largest ski resorts offer up to 15 kilometres of slopes (Bláfjöll). The highest ski resorts for skiing in Iceland (Ísland) extend up to an altitude of 1,014 metres (Hlíðarfjall – Akureyri).',
+        content:
+            'In the list of the best ski resorts in Iceland (Ísland), the ski resort Bláfjöll is top with 3.0 out of 5 stars. The largest ski resorts offer up to 15 kilometres of slopes (Bláfjöll). The highest ski resorts for skiing in Iceland (Ísland) extend up to an altitude of 1,014 metres (Hlíðarfjall – Akureyri).',
     },
 ]
 
@@ -268,41 +286,53 @@ function ScrollDownShow2() {
     }
 
     return (
-        <ScrollDownShowWrapper>
+        <>
             <Header />
-            <BannerWrapper>
-                <img src={BannerImg} alt="" srcSet="" />
-                <Title2_1>There will be the slogan of this company.</Title2_1>
-            </BannerWrapper>
-            <ContentsWrapper>
-                <ContentsBackgroundWrapper>
-                    <img src={ContentBackground} alt="" srcSet="" />
-                </ContentsBackgroundWrapper>
-                {dummyData.length > 0 &&
-                    dummyData.map((data, index) => (
-                        <ContentWrapper key={data.id}>
-                            <StageWrapper data-id={data.id} isActive={currentId >= data.id ? true : false} className="StageWrapper">
-                                <div>
-                                    <img src={SnowflakeIcon} alt="" srcSet="" />
-                                </div>
-                            </StageWrapper>
-                            <ContentContainer index={index} isActive={currentId >= data.id ? true : false}>
-                                <ContentImgWrapper>
-                                    <img src={data.img} alt="" srcSet="" />
-                                </ContentImgWrapper>
-                                <br />
-                                <TitleWrapperNoBaseline>
-                                    <h3>{data.title}</h3>
-                                </TitleWrapperNoBaseline>
-                                <TextWrapper2 index={index} isActive={currentId >= data.id ? true : false}>
-                                    <p>{data.content}</p>
-                                </TextWrapper2>
-                            </ContentContainer>
-                        </ContentWrapper>
-                    ))}
-            </ContentsWrapper>
-            <Footer />
-        </ScrollDownShowWrapper>
+            <ScrollDownShowWrapper>
+                <BannerWrapper>
+                    <img src={BannerImg} alt="" srcSet="" />
+                    <Title2_1>There will be the slogan of this company.</Title2_1>
+                </BannerWrapper>
+                <ContentsWrapper>
+                    <ContentsBackgroundWrapper>
+                        <img src={ContentBackground} alt="" srcSet="" />
+                    </ContentsBackgroundWrapper>
+                    {dummyData.length > 0 &&
+                        dummyData.map((data, index) => (
+                            <ContentWrapper key={data.id}>
+                                <StageWrapper
+                                    data-id={data.id}
+                                    isActive={currentId >= data.id ? true : false}
+                                    className="StageWrapper"
+                                >
+                                    <div>
+                                        <img src={SnowflakeIcon} alt="" srcSet="" />
+                                    </div>
+                                </StageWrapper>
+                                <ContentContainer
+                                    index={index}
+                                    isActive={currentId >= data.id ? true : false}
+                                >
+                                    <ContentImgWrapper>
+                                        <img src={data.img} alt="" srcSet="" />
+                                    </ContentImgWrapper>
+                                    <br />
+                                    <TitleWrapperNoBaseline>
+                                        <h3>{data.title}</h3>
+                                    </TitleWrapperNoBaseline>
+                                    <TextWrapper2
+                                        index={index}
+                                        isActive={currentId >= data.id ? true : false}
+                                    >
+                                        <p>{data.content}</p>
+                                    </TextWrapper2>
+                                </ContentContainer>
+                            </ContentWrapper>
+                        ))}
+                </ContentsWrapper>
+                <Footer />
+            </ScrollDownShowWrapper>
+        </>
     )
 }
 

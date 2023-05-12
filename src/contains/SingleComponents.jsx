@@ -13,10 +13,11 @@ import Modal from '../components/Modal.jsx'
 import PieChart from '../components/PieChart.jsx'
 import SliderBanner from '../components/SliderBanner.jsx'
 import Titles from '../components/Titles.jsx'
+import { headerHeight } from '../components/Header.jsx'
 
 const SingleComponentsWrapper = styled.div`
     width: 100%;
-    margin-top: 105px;
+    margin-top: ${headerHeight};
 `
 
 const SeperateLine = styled.div`

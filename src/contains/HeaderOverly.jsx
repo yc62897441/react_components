@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import Header from '../components/Header.jsx'
+import { headerHeight } from '../components/Header.jsx'
 
 const HeaderWrapper = styled.header`
     position: relative;
@@ -8,8 +9,7 @@ const HeaderWrapper = styled.header`
     width: 100vw;
     height: 60px;
     padding: 10px 0;
-    margin-top: 105px;
-
+    margin-top: ${headerHeight};
     z-index: 999;
 `
 

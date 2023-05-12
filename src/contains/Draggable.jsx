@@ -1,10 +1,11 @@
 import { useEffect } from 'react'
 import styled from 'styled-components'
 import Header from '../components/Header.jsx'
+import { headerHeight } from '../components/Header.jsx'
 
 const DragableWrapper = styled.div`
     width: 100%;
-    margin-top: 105px;
+    margin-top: ${headerHeight};
     border: 1px solid black;
 `
 

@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react'
 import styled from 'styled-components'
 import Header from '../components/Header.jsx'
+import { headerHeight } from '../components/Header.jsx'
 
 // 匯入 excel
 import * as XLSX from 'xlsx/xlsx.mjs'
@@ -17,7 +18,7 @@ import { fromLonLat } from 'ol/proj'
 const OpenLayersWrapper = styled.div`
     width: 100%;
     height: calc(100vh - 150px);
-    margin-top: 150px;
+    margin-top: ${headerHeight};
     padding: 10px;
     background-color: #fbfbfb;
 `
@@ -130,7 +131,7 @@ function OpenLayers() {
         // 獲取上傳的文件對象
         //const { files } = file.target; // 通過FileReader對象讀取文件
         const fileReader = new FileReader()
-        //console.log(fileReader);
+        // console.log(fileReader);
         for (let index = 0; index < files.length; index++) {
             fileReader.name = files[index].name
         }
@@ -165,7 +166,7 @@ function OpenLayers() {
             } catch (e) {
                 // 這裡可以拋出文件類型錯誤不正確的相關提示
                 alert(e)
-                //console.log("文件類型不正確");
+                // console.log("文件類型不正確");
                 return
             }
         }

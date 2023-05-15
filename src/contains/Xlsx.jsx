@@ -118,6 +118,26 @@ function Xlsx() {
         })
     }
 
+    function outputXlsxToJson() {
+        // a JSON object
+        // fileList
+        const dataJson = {
+            data: fileList,
+        }
+
+        // convert JSON object to string
+        const data = JSON.stringify(dataJson)
+
+        return console.log('data', data)
+        // FIXME: 目前無法使用 fs，所以還沒修改成，可以匯出檔案的方式
+        fs.writeFile('user.json', data, (err) => {
+            if (err) {
+                throw err
+            }
+            console.log('JSON data is saved.')
+        })
+    }
+
     // 初始化 geocoder
     var geocoder
     function initMap() {
@@ -183,6 +203,11 @@ function Xlsx() {
                         <br />
                         <Button1 type="button" onClick={outputXlsx}>
                             匯出 xlsx
+                        </Button1>
+                        <br />
+                        <br />
+                        <Button1 type="button" onClick={outputXlsxToJson}>
+                            匯出 xlsx 成 JSON
                         </Button1>
                         <br />
                         <br />

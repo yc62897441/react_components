@@ -76,7 +76,24 @@ const LocatPointWrapper = styled.div`
 
 function OpenLayers() {
     const isMapInit = useRef(false)
-    const [fileListWithGeo, setFileListWithGeo] = useState([])
+    const [fileListWithGeo, setFileListWithGeo] = useState([
+        {
+            用戶名: 'AAA股份有限公司',
+            電號: '03-000',
+            縣市: '宜蘭縣',
+            用電地址: '宜蘭市光復路',
+            lat: 24.7553153,
+            lon: 121.7558994,
+        },
+        {
+            用戶名: 'BBB股份有限公司',
+            電號: '03-001',
+            縣市: '宜蘭縣',
+            用電地址: '宜蘭縣宜蘭市XXX',
+            lat: 24.7238725,
+            lon: 121.7689197,
+        },
+    ])
 
     // 初始化地圖
     useEffect(() => {
@@ -86,7 +103,20 @@ function OpenLayers() {
                 layers: [
                     new TileLayer({
                         source: new XYZ({
-                            url: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
+                            // 使用不同圖層
+                            // url: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png', // openstreetmap
+                            // url: 'http://{1-4}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', // basemaps
+                            // url: 'http://{1-4}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png', // basemaps dark
+                            // url: 'http://{1-4}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}.png', // basemaps light_all
+                            // url: 'http://{1-4}.basemaps.cartocdn.com/dark_nolabels/{z}/{x}/{y}.png', // basemaps dark_nolabels
+                            // url: 'https://{1-4}.basemaps.cartocdn.com/rastertiles/voyager_labels_under/{z}/{x}/{y}.png', // CartoDB地圖
+                            // url: 'https://{1-4}.basemaps.cartocdn.com/rastertiles/dark_all/{z}/{x}/{y}.png', // CartoDB 地圖(深色)
+                            // url: 'https://cartocdn_{a-d}.global.ssl.fastly.net/base-antique/{z}/{x}/{y}.png', // CartoDB 地圖(仿古)
+                            // url: 'https://cartocdn_{a-d}.global.ssl.fastly.net/base-eco/{z}/{x}/{y}.png', // CartoDB World Eco
+                            // url: 'https://cartocdn_{a-d}.global.ssl.fastly.net/base-flatblue/{z}/{x}/{y}.png', // CartoDB World Flat Blue
+                            // url: 'https://cartocdn_{a-d}.global.ssl.fastly.net/base-midnight/{z}/{x}/{y}.png', // CartoDB World Midnight Commander
+                            // url: 'https://wmts.nlsc.gov.tw/wmts/EMAP/default/GoogleMapsCompatible/{z}/{y}/{x}', // 通用版電子地圖
+                             url: 'https://wmts.nlsc.gov.tw/wmts/PHOTO2/default/GoogleMapsCompatible/{z}/{y}/{x}', // 正射影像圖(通用版)
                         }),
                     }),
                 ],

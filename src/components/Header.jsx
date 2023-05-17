@@ -65,6 +65,7 @@ function Header() {
             <Link to="/sliderAnimation">sliderAnimation</Link>
             <Link to="/touch">touch</Link>
             <Link to="/touchBlog">touchBlog</Link>
+            <Link to="/wordCloud">wordCloud</Link>
             <Link to="/xlsx">xlsx</Link>
         </HeaderWrapper>
     )

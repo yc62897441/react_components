@@ -17,6 +17,7 @@ import Touch from './contains/Touch.jsx'
 import TouchBlog from './contains/TouchBlog.jsx'
 import HideScrollbar from './components/HideSrollbar.jsx'
 import ScrollToTop from './components/ScrollToTop.jsx'
+import WordCloud from './contains/WordCloud.jsx'
 import Xlsx from './contains/Xlsx.jsx'
 
 const GlobalStyle = createGlobalStyle`
@@ -95,6 +96,7 @@ function App() {
                     <Route path="/scrollDownShow2" element={<ScrollDownShow2 />} />
                     <Route path="/singleComponents" element={<SingleComponents setIsHideSrollbar={setIsHideSrollbar} />} />
                     <Route path="/sliderAnimation" element={<SliderAnimation />} />
+                    <Route path="/wordCloud" element={<WordCloud />} />
                     <Route path="/touch" element={<Touch />} />
                     <Route path="/touchBlog" element={<TouchBlog />} />
                     <Route path="/xlsx" element={<Xlsx />} />

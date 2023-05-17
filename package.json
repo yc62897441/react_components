@@ -25,6 +25,8 @@
   },
   "dependencies": {
     "babel-preset-es2015": "^6.24.1",
+    "echarts": "^5.4.2",
+    "echarts-wordcloud": "^2.1.0",
     "exceljs": "^4.3.0",
     "ol": "^7.1.0",
     "react": "^18.2.0",

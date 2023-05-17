@@ -59,6 +59,7 @@ function Header() {
             <Link to="/lazyLoading">lazyLoading</Link>
             <Link to="/mouseEvent">mouseEvent</Link>
             <Link to="/openLayers">openLayers</Link>
+            <Link to="/openLayers2">openLayers2</Link>
             <Link to="/scrollDownShow">scrollDownShow</Link>
             <Link to="/singleComponents">singleComponents</Link>
             <Link to="/sliderAnimation">sliderAnimation</Link>

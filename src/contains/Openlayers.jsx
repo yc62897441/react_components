@@ -107,7 +107,7 @@ function OpenLayers() {
                             // url: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png', // openstreetmap
                             // url: 'http://{1-4}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', // basemaps
                             // url: 'http://{1-4}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png', // basemaps dark
-                            // url: 'http://{1-4}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}.png', // basemaps light_all
+                            url: 'http://{1-4}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}.png', // basemaps light_all
                             // url: 'http://{1-4}.basemaps.cartocdn.com/dark_nolabels/{z}/{x}/{y}.png', // basemaps dark_nolabels
                             // url: 'https://{1-4}.basemaps.cartocdn.com/rastertiles/voyager_labels_under/{z}/{x}/{y}.png', // CartoDB地圖
                             // url: 'https://{1-4}.basemaps.cartocdn.com/rastertiles/dark_all/{z}/{x}/{y}.png', // CartoDB 地圖(深色)
@@ -116,7 +116,7 @@ function OpenLayers() {
                             // url: 'https://cartocdn_{a-d}.global.ssl.fastly.net/base-flatblue/{z}/{x}/{y}.png', // CartoDB World Flat Blue
                             // url: 'https://cartocdn_{a-d}.global.ssl.fastly.net/base-midnight/{z}/{x}/{y}.png', // CartoDB World Midnight Commander
                             // url: 'https://wmts.nlsc.gov.tw/wmts/EMAP/default/GoogleMapsCompatible/{z}/{y}/{x}', // 通用版電子地圖
-                             url: 'https://wmts.nlsc.gov.tw/wmts/PHOTO2/default/GoogleMapsCompatible/{z}/{y}/{x}', // 正射影像圖(通用版)
+                            // url: 'https://wmts.nlsc.gov.tw/wmts/PHOTO2/default/GoogleMapsCompatible/{z}/{y}/{x}', // 正射影像圖(通用版)
                         }),
                     }),
                 ],

@@ -8,6 +8,7 @@ import Homepage from './contains/Homepage.jsx'
 import LazyLoading from './contains/LazyLoading.jsx'
 import MouseEvent from './contains/MouseEvent.jsx'
 import OpenLayers from './contains/Openlayers.jsx'
+import OpenLayers2 from './contains/Openlayers2.jsx'
 import ScrollDownShow from './contains/ScrollDownShow.jsx'
 import ScrollDownShow2 from './contains/ScrollDownShow2.jsx'
 import SingleComponents from './contains/SingleComponents.jsx'
@@ -89,6 +90,7 @@ function App() {
                     <Route path="/lazyLoading" element={<LazyLoading />} />
                     <Route path="/mouseEvent" element={<MouseEvent />} />
                     <Route path="/openLayers" element={<OpenLayers />} />
+                    <Route path="/openLayers2" element={<OpenLayers2 />} />
                     <Route path="/scrollDownShow" element={<ScrollDownShow />} />
                     <Route path="/scrollDownShow2" element={<ScrollDownShow2 />} />
                     <Route path="/singleComponents" element={<SingleComponents setIsHideSrollbar={setIsHideSrollbar} />} />

@@ -3,10 +3,10 @@ import styled from 'styled-components'
 import Header from '../components/Header.jsx'
 import { headerHeight } from '../components/Header.jsx'
 
+// 製作文字雲
 import * as echarts from 'echarts'
 import 'echarts-wordcloud'
-
-import img from '../assets/img/ScrollDownShow2/pexels-arthouse-studio-4338103.jpg'
+import img from '../assets/img/like.png'
 
 const keyWordsList = [
     {
@@ -120,6 +120,606 @@ const keyWordsList = [
         name: 'Z ZZZZ ZZ ZZZ',
         value: 243,
     },
+    {
+        name: 'BBB BBBB B BB',
+        value: 1463,
+    },
+    {
+        name: 'CCCC CC C',
+        value: 1403,
+    },
+    {
+        name: 'DD DDD',
+        value: 1349,
+    },
+    {
+        name: 'E EEEE',
+        value: 1320,
+    },
+    {
+        name: 'FF FFF F',
+        value: 1228,
+    },
+    {
+        name: 'G GG',
+        value: 1196,
+    },
+    {
+        name: 'HH HHHH',
+        value: 1112,
+    },
+    {
+        name: 'IIII III I',
+        value: 965,
+    },
+    {
+        name: 'JJ JJJJ JJ',
+        value: 847,
+    },
+    {
+        name: 'K KK KKK',
+        value: 582,
+    },
+    {
+        name: 'L LLL L LLLL',
+        value: 555,
+    },
+    {
+        name: 'MM MMM MMMM',
+        value: 550,
+    },
+    {
+        name: 'N NN N',
+        value: 462,
+    },
+    {
+        name: 'OOOO OOOO',
+        value: 366,
+    },
+    {
+        name: 'PP PPP',
+        value: 363,
+    },
+    {
+        name: 'QQ QQQ',
+        value: 360,
+    },
+    {
+        name: 'R RR RRR R',
+        value: 282,
+    },
+    {
+        name: 'SS SSS S',
+        value: 273,
+    },
+    {
+        name: 'T TT',
+        value: 265,
+    },
+    {
+        name: 'UU UUU',
+        value: 255,
+    },
+    {
+        name: 'VV VVV VV',
+        value: 250,
+    },
+    {
+        name: 'WW WWWW WWWW W',
+        value: 248,
+    },
+    {
+        name: 'XXXX X XX XXX',
+        value: 245,
+    },
+    {
+        name: 'YY YYY Y YYYY',
+        value: 244,
+    },
+    {
+        name: 'Z ZZZZ ZZ ZZZ',
+        value: 243,
+    },
+    {
+        name: 'BBB BBBB B BB',
+        value: 1463,
+    },
+    {
+        name: 'CCCC CC C',
+        value: 1403,
+    },
+    {
+        name: 'DD DDD',
+        value: 1349,
+    },
+    {
+        name: 'E EEEE',
+        value: 1320,
+    },
+    {
+        name: 'FF FFF F',
+        value: 1228,
+    },
+    {
+        name: 'G GG',
+        value: 1196,
+    },
+    {
+        name: 'HH HHHH',
+        value: 1112,
+    },
+    {
+        name: 'IIII III I',
+        value: 965,
+    },
+    {
+        name: 'JJ JJJJ JJ',
+        value: 847,
+    },
+    {
+        name: 'K KK KKK',
+        value: 582,
+    },
+    {
+        name: 'L LLL L LLLL',
+        value: 555,
+    },
+    {
+        name: 'MM MMM MMMM',
+        value: 550,
+    },
+    {
+        name: 'N NN N',
+        value: 462,
+    },
+    {
+        name: 'OOOO OOOO',
+        value: 366,
+    },
+    {
+        name: 'PP PPP',
+        value: 363,
+    },
+    {
+        name: 'QQ QQQ',
+        value: 360,
+    },
+    {
+        name: 'R RR RRR R',
+        value: 282,
+    },
+    {
+        name: 'SS SSS S',
+        value: 273,
+    },
+    {
+        name: 'T TT',
+        value: 265,
+    },
+    {
+        name: 'UU UUU',
+        value: 255,
+    },
+    {
+        name: 'VV VVV VV',
+        value: 250,
+    },
+    {
+        name: 'WW WWWW WWWW W',
+        value: 248,
+    },
+    {
+        name: 'XXXX X XX XXX',
+        value: 245,
+    },
+    {
+        name: 'YY YYY Y YYYY',
+        value: 244,
+    },
+    {
+        name: 'Z ZZZZ ZZ ZZZ',
+        value: 243,
+    },
+    {
+        name: 'BBB BBBB B BB',
+        value: 1463,
+    },
+    {
+        name: 'CCCC CC C',
+        value: 1403,
+    },
+    {
+        name: 'DD DDD',
+        value: 1349,
+    },
+    {
+        name: 'E EEEE',
+        value: 1320,
+    },
+    {
+        name: 'FF FFF F',
+        value: 1228,
+    },
+    {
+        name: 'G GG',
+        value: 1196,
+    },
+    {
+        name: 'HH HHHH',
+        value: 1112,
+    },
+    {
+        name: 'IIII III I',
+        value: 965,
+    },
+    {
+        name: 'JJ JJJJ JJ',
+        value: 847,
+    },
+    {
+        name: 'K KK KKK',
+        value: 582,
+    },
+    {
+        name: 'L LLL L LLLL',
+        value: 555,
+    },
+    {
+        name: 'MM MMM MMMM',
+        value: 550,
+    },
+    {
+        name: 'N NN N',
+        value: 462,
+    },
+    {
+        name: 'OOOO OOOO',
+        value: 366,
+    },
+    {
+        name: 'PP PPP',
+        value: 363,
+    },
+    {
+        name: 'QQ QQQ',
+        value: 360,
+    },
+    {
+        name: 'R RR RRR R',
+        value: 282,
+    },
+    {
+        name: 'SS SSS S',
+        value: 273,
+    },
+    {
+        name: 'T TT',
+        value: 265,
+    },
+    {
+        name: 'UU UUU',
+        value: 255,
+    },
+    {
+        name: 'VV VVV VV',
+        value: 250,
+    },
+    {
+        name: 'WW WWWW WWWW W',
+        value: 248,
+    },
+    {
+        name: 'XXXX X XX XXX',
+        value: 245,
+    },
+    {
+        name: 'YY YYY Y YYYY',
+        value: 244,
+    },
+    {
+        name: 'Z ZZZZ ZZ ZZZ',
+        value: 243,
+    },
+    {
+        name: 'BBB BBBB B BB',
+        value: 1463,
+    },
+    {
+        name: 'CCCC CC C',
+        value: 1403,
+    },
+    {
+        name: 'DD DDD',
+        value: 1349,
+    },
+    {
+        name: 'E EEEE',
+        value: 1320,
+    },
+    {
+        name: 'FF FFF F',
+        value: 1228,
+    },
+    {
+        name: 'G GG',
+        value: 1196,
+    },
+    {
+        name: 'HH HHHH',
+        value: 1112,
+    },
+    {
+        name: 'IIII III I',
+        value: 965,
+    },
+    {
+        name: 'JJ JJJJ JJ',
+        value: 847,
+    },
+    {
+        name: 'K KK KKK',
+        value: 582,
+    },
+    {
+        name: 'L LLL L LLLL',
+        value: 555,
+    },
+    {
+        name: 'MM MMM MMMM',
+        value: 550,
+    },
+    {
+        name: 'N NN N',
+        value: 462,
+    },
+    {
+        name: 'OOOO OOOO',
+        value: 366,
+    },
+    {
+        name: 'PP PPP',
+        value: 363,
+    },
+    {
+        name: 'QQ QQQ',
+        value: 360,
+    },
+    {
+        name: 'R RR RRR R',
+        value: 282,
+    },
+    {
+        name: 'SS SSS S',
+        value: 273,
+    },
+    {
+        name: 'T TT',
+        value: 265,
+    },
+    {
+        name: 'UU UUU',
+        value: 255,
+    },
+    {
+        name: 'VV VVV VV',
+        value: 250,
+    },
+    {
+        name: 'WW WWWW WWWW W',
+        value: 248,
+    },
+    {
+        name: 'XXXX X XX XXX',
+        value: 245,
+    },
+    {
+        name: 'YY YYY Y YYYY',
+        value: 244,
+    },
+    {
+        name: 'Z ZZZZ ZZ ZZZ',
+        value: 243,
+    },
+    {
+        name: 'BBB BBBB B BB',
+        value: 1463,
+    },
+    {
+        name: 'CCCC CC C',
+        value: 1403,
+    },
+    {
+        name: 'DD DDD',
+        value: 1349,
+    },
+    {
+        name: 'E EEEE',
+        value: 1320,
+    },
+    {
+        name: 'FF FFF F',
+        value: 1228,
+    },
+    {
+        name: 'G GG',
+        value: 1196,
+    },
+    {
+        name: 'HH HHHH',
+        value: 1112,
+    },
+    {
+        name: 'IIII III I',
+        value: 965,
+    },
+    {
+        name: 'JJ JJJJ JJ',
+        value: 847,
+    },
+    {
+        name: 'K KK KKK',
+        value: 582,
+    },
+    {
+        name: 'L LLL L LLLL',
+        value: 555,
+    },
+    {
+        name: 'MM MMM MMMM',
+        value: 550,
+    },
+    {
+        name: 'N NN N',
+        value: 462,
+    },
+    {
+        name: 'OOOO OOOO',
+        value: 366,
+    },
+    {
+        name: 'PP PPP',
+        value: 363,
+    },
+    {
+        name: 'QQ QQQ',
+        value: 360,
+    },
+    {
+        name: 'R RR RRR R',
+        value: 282,
+    },
+    {
+        name: 'SS SSS S',
+        value: 273,
+    },
+    {
+        name: 'T TT',
+        value: 265,
+    },
+    {
+        name: 'UU UUU',
+        value: 255,
+    },
+    {
+        name: 'VV VVV VV',
+        value: 250,
+    },
+    {
+        name: 'WW WWWW WWWW W',
+        value: 248,
+    },
+    {
+        name: 'XXXX X XX XXX',
+        value: 245,
+    },
+    {
+        name: 'YY YYY Y YYYY',
+        value: 244,
+    },
+    {
+        name: 'Z ZZZZ ZZ ZZZ',
+        value: 243,
+    },
+    {
+        name: 'BBB BBBB B BB',
+        value: 1463,
+    },
+    {
+        name: 'CCCC CC C',
+        value: 1403,
+    },
+    {
+        name: 'DD DDD',
+        value: 1349,
+    },
+    {
+        name: 'E EEEE',
+        value: 1320,
+    },
+    {
+        name: 'FF FFF F',
+        value: 1228,
+    },
+    {
+        name: 'G GG',
+        value: 1196,
+    },
+    {
+        name: 'HH HHHH',
+        value: 1112,
+    },
+    {
+        name: 'IIII III I',
+        value: 965,
+    },
+    {
+        name: 'JJ JJJJ JJ',
+        value: 847,
+    },
+    {
+        name: 'K KK KKK',
+        value: 582,
+    },
+    {
+        name: 'L LLL L LLLL',
+        value: 555,
+    },
+    {
+        name: 'MM MMM MMMM',
+        value: 550,
+    },
+    {
+        name: 'N NN N',
+        value: 462,
+    },
+    {
+        name: 'OOOO OOOO',
+        value: 366,
+    },
+    {
+        name: 'PP PPP',
+        value: 363,
+    },
+    {
+        name: 'QQ QQQ',
+        value: 360,
+    },
+    {
+        name: 'R RR RRR R',
+        value: 282,
+    },
+    {
+        name: 'SS SSS S',
+        value: 273,
+    },
+    {
+        name: 'T TT',
+        value: 265,
+    },
+    {
+        name: 'UU UUU',
+        value: 255,
+    },
+    {
+        name: 'VV VVV VV',
+        value: 250,
+    },
+    {
+        name: 'WW WWWW WWWW W',
+        value: 248,
+    },
+    {
+        name: 'XXXX X XX XXX',
+        value: 245,
+    },
+    {
+        name: 'YY YYY Y YYYY',
+        value: 244,
+    },
+    {
+        name: 'Z ZZZZ ZZ ZZZ',
+        value: 243,
+    },
 ]
 
 const WordCloudWrapper = styled.div`
@@ -132,8 +732,12 @@ const WordCloudWrapper = styled.div`
 
 const WordCloudImg = styled.div`
     width: 100%;
+    max-width: 1100px;
     height: 100%;
-    border: 2px solid black;
+    max-height: 900px;
+    margin: 0 auto;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 `
 
 function WordCloud() {
@@ -185,7 +789,7 @@ function WordCloud() {
                         // drawOutOfBound: true, // Allow word bigger than the size of the canvas to be drawn
                         // layoutAnimation: true, // NOTE disable it will lead to UI blocking when there is lots of words.
 
-                        // maskImage: maskImage, // 这个是可以自定义背景图片的，词云会按照图片的形状排布，所以有形状限制的时候，最好用背景图来实现，而且，这个背景图一定要放base64的，不然词云画不出来
+                        maskImage: maskImage, // 可以根據圖片形狀生成有形狀的詞雲圖。maskImage 非常重要，這個圖片是詞雲能變成任何形狀的蒙版。這個圖片要注意是純黑的形狀、透明圖。這個是可以自定義背景圖片的，詞雲會按照圖片的形狀排布，所以有形狀限制的時候，最好用背景圖來實現，而且，這個背景圖一定要放base64的，不然詞雲畫不出來。
 
                         textPadding: 0,
                         autoSize: {
@@ -239,7 +843,7 @@ function WordCloud() {
         } else if (992 <= newWindowSize && newWindowSize < 1440) {
             sizeRange = [30, 75]
         } else if (1440 <= newWindowSize) {
-            sizeRange = [30, 100]
+            sizeRange = [10, 35]
         }
         return sizeRange
     }

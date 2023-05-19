@@ -2,6 +2,10 @@ import { useState } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { createGlobalStyle } from 'styled-components'
 
+// import D3BubbleChart from './contains/D3BubbleChart.jsx'
+// import D3BubbleChart from './contains/D3BubbleChart2.jsx'
+// import D3BubbleChart from './contains/D3BubbleChart3.jsx'
+import D3BubbleChart from './contains/D3BubbleChart4.jsx'
 import Dragable from './contains/Draggable.jsx'
 import HeaderOverly from './contains/HeaderOverly.jsx'
 import Homepage from './contains/Homepage.jsx'
@@ -86,6 +90,7 @@ function App() {
             <BrowserRouter>
                 <ScrollToTop />
                 <Routes>
+                    <Route path="/d3BubbleChart" element={<D3BubbleChart />} />
                     <Route path="/dragable" element={<Dragable />} />
                     <Route path="/headerOverly" element={<HeaderOverly />} />
                     <Route path="/lazyLoading" element={<LazyLoading />} />
@@ -94,7 +99,10 @@ function App() {
                     <Route path="/openLayers2" element={<OpenLayers2 />} />
                     <Route path="/scrollDownShow" element={<ScrollDownShow />} />
                     <Route path="/scrollDownShow2" element={<ScrollDownShow2 />} />
-                    <Route path="/singleComponents" element={<SingleComponents setIsHideSrollbar={setIsHideSrollbar} />} />
+                    <Route
+                        path="/singleComponents"
+                        element={<SingleComponents setIsHideSrollbar={setIsHideSrollbar} />}
+                    />
                     <Route path="/sliderAnimation" element={<SliderAnimation />} />
                     <Route path="/wordCloud" element={<WordCloud />} />
                     <Route path="/touch" element={<Touch />} />

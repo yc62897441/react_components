@@ -17,6 +17,7 @@ import ScrollDownShow from './contains/ScrollDownShow.jsx'
 import ScrollDownShow2 from './contains/ScrollDownShow2.jsx'
 import SingleComponents from './contains/SingleComponents.jsx'
 import SliderAnimation from './contains/SliderAnimation.jsx'
+import SvgMap from './contains/SvgMap.jsx'
 import SvgTaiwanMap from './contains/SvgTaiwanMap.jsx'
 import Touch from './contains/Touch.jsx'
 import TouchBlog from './contains/TouchBlog.jsx'
@@ -105,6 +106,7 @@ function App() {
                         element={<SingleComponents setIsHideSrollbar={setIsHideSrollbar} />}
                     />
                     <Route path="/sliderAnimation" element={<SliderAnimation />} />
+                    <Route path="/svgMap" element={<SvgMap />} />
                     <Route path="/svgTaiwanMap" element={<SvgTaiwanMap />} />
                     <Route path="/wordCloud" element={<WordCloud />} />
                     <Route path="/touch" element={<Touch />} />

@@ -64,6 +64,7 @@ function Header() {
             <Link to="/scrollDownShow">scrollDownShow</Link>
             <Link to="/singleComponents">singleComponents</Link>
             <Link to="/sliderAnimation">sliderAnimation</Link>
+            <Link to="/svgTaiwanMap">svgTaiwanMap</Link>
             <Link to="/touch">touch</Link>
             <Link to="/touchBlog">touchBlog</Link>
             <Link to="/wordCloud">wordCloud</Link>

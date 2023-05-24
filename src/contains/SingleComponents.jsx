@@ -1,6 +1,8 @@
 import styled from 'styled-components'
 import Header from '../components/Header.jsx'
 import Accordion from '../components/components/Accordion.jsx'
+import BatteryBarHorizontal from '../components/BatteryBarHorizontal.jsx'
+import BatteryBarHorizontal2 from '../components/BatteryBarHorizontal2.jsx'
 import Blog from '../components/Blog.jsx'
 import BorderStyle from '../components/BorderStyle.jsx'
 import Bottuns from '../components/components/Bottuns.jsx'
@@ -32,6 +34,10 @@ function SingleComponents({ setIsHideSrollbar }) {
         <>
             <Header />
             <SingleComponentsWrapper>
+                <BatteryBarHorizontal />
+                <BatteryBarHorizontal2 />
+                <SeperateLine />
+
                 <Blog />
                 <br />
                 <br />

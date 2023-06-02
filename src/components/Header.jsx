@@ -54,6 +54,7 @@ function Header() {
 
     return (
         <HeaderWrapper showHeader={showHeader}>
+            <Link to="/chartJs">chartJs</Link>
             <Link to="/d3BubbleChart">d3BubbleChart</Link>
             <Link to="/dragable">dragable</Link>
             <Link to="/headerOverly">headerOverly</Link>

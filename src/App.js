@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { createGlobalStyle } from 'styled-components'
 
+import ChartJs from './contains/ChartJs.jsx'
 // import D3BubbleChart from './contains/D3BubbleChart.jsx'
 // import D3BubbleChart from './contains/D3BubbleChart2.jsx'
 // import D3BubbleChart from './contains/D3BubbleChart3.jsx'
@@ -92,6 +93,7 @@ function App() {
             <BrowserRouter>
                 <ScrollToTop />
                 <Routes>
+                    <Route path="/chartJs" element={<ChartJs />} />
                     <Route path="/d3BubbleChart" element={<D3BubbleChart />} />
                     <Route path="/dragable" element={<Dragable />} />
                     <Route path="/headerOverly" element={<HeaderOverly />} />

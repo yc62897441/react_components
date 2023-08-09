@@ -58,12 +58,14 @@ function Header() {
             <Link to="/ChartComponentsAmchart">ChartComponentsAmchart</Link>
             <Link to="/chartJs">chartJs</Link>
             <Link to="/d3BubbleChart">d3BubbleChart</Link>
+            <Link to="/dataStructure">dataStructure</Link>
             <Link to="/dragable">dragable</Link>
             <Link to="/headerOverly">headerOverly</Link>
             <Link to="/lazyLoading">lazyLoading</Link>
             <Link to="/mouseEvent">mouseEvent</Link>
             <Link to="/openLayers">openLayers</Link>
             <Link to="/openLayers2">openLayers2</Link>
+            <Link to="/reactFlow">reactFlow</Link>
             <Link to="/scrollDownShow">scrollDownShow</Link>
             <Link to="/singleComponents">singleComponents</Link>
             <Link to="/sliderAnimation">sliderAnimation</Link>

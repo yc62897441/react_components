@@ -18,6 +18,7 @@ const ChartContainer = styled.div`
 function createChart(domElementId, chartRef, data, chartTitle) {
     // 初始化圖表 root 元件
     const root = am5.Root.new(domElementId)
+    root._logo.dispose() // 隱藏 amchart logo
     root.setThemes([am5themes_Animated.new(root)])
 
     // 綁定到 useRef，以便在 unmounted 時可以對圖表做 dispose()
@@ -34,6 +35,16 @@ function createChart(domElementId, chartRef, data, chartTitle) {
             pinchZoomX: true,
         })
     )
+
+    // Modify chart's colors
+    chart
+        .get('colors')
+        .set('colors', [
+            am5.color(0x087f8c),
+            am5.color(0x5aaa95),
+            am5.color(0x86a873),
+            am5.color(0xbb9f06),
+        ])
 
     // Add cursor
     // https://www.amcharts.com/docs/v5/charts/xy-chart/cursor/

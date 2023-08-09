@@ -18,6 +18,7 @@ const ChartContainer = styled.div`
 function createChart(domElementId, chartRef, data, legendUnit) {
     // 初始化圖表 root 元件
     const root = am5.Root.new(domElementId)
+    root._logo.dispose() // 隱藏 amchart logo
     root.setThemes([am5themes_Animated.new(root)])
 
     // 綁定到 useRef，以便在 unmounted 時可以對圖表做 dispose()
@@ -28,13 +29,28 @@ function createChart(domElementId, chartRef, data, legendUnit) {
     const chart = root.container.children.push(
         am5xy.XYChart.new(root, {
             focusable: true,
-            panX: true,
-            panY: true,
-            wheelX: 'panX',
-            wheelY: 'zoomX',
+            // panX: true, // 避免滑鼠滾輪滾動
+            // panY: true, // 避免滑鼠滾輪滾動
+            // wheelX: 'panX', // 避免滑鼠滾輪滾動
+            // wheelY: 'zoomX', //  避免滑鼠滾輪滾動
             pinchZoomX: true,
+            panX: false,
+            panY: false,
+            wheelY: 'none',
         })
     )
+    // 吃的格式
+    // Modify chart's colors
+    chart
+        .get('colors')
+        .set('colors', [
+            am5.color(0x845ec2),
+            am5.color(0xd65db1),
+            am5.color('#FF6F91'),
+            am5.color('#FF9671'),
+            am5.color('#FFC75F'),
+            am5.color('#F9F871'),
+        ])
 
     // 建立座標軸
     // Create axes

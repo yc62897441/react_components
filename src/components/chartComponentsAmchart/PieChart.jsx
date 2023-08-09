@@ -18,6 +18,7 @@ const ChartContainer = styled.div`
 function createChart(domElementId, chartRef, data, chartTitle) {
     // 初始化圖表 root 元件
     const root = am5.Root.new(domElementId)
+    root._logo.dispose() // 隱藏 amchart logo
     root.setThemes([am5themes_Animated.new(root)])
 
     // 綁定到 useRef，以便在 unmounted 時可以對圖表做 dispose()
@@ -40,12 +41,27 @@ function createChart(domElementId, chartRef, data, chartTitle) {
             name: 'Series',
             valueField: 'value',
             categoryField: 'category',
-            legendLabelText: '[{fill}]{category}[/]', // 顯示數值
-            legendValueText: '[bold {fill}]{value}[/]', // 顯示數值
+            // legendLabelText: '[{fill}]{category}[/]', // 顯示數值
+            // legendValueText: '[bold {fill}]{value}[/]', // 顯示數值
             // startAngle: -180, // 設定圓餅起始角度與結束角度，這樣的設置會變成半圓形
             // endAngle: 0
         })
     )
+    // 吃的格式，要放在 series.data.setAll(data) 之前
+    // Modify chart's colors
+    series
+        .get('colors')
+        .set('colors', [
+            am5.color(0x845ec2),
+            am5.color(0xd65db1),
+            am5.color('#FF6F91'),
+            am5.color('#FF9671'),
+            am5.color('#FFC75F'),
+            am5.color('#F9F871'),
+        ])
+    //各塊圓餅label隱藏
+    series.ticks.template.set('forceHidden', true)
+    series.labels.template.set('forceHidden', true)
     series.data.setAll(data)
 
     series.appear(1000, 100) // 進場圓餅展開動畫
@@ -54,11 +70,13 @@ function createChart(domElementId, chartRef, data, chartTitle) {
     // 使用 legend
     let legend = chart.children.push(
         am5.Legend.new(root, {
-            centerX: am5.percent(95),
-            x: am5.percent(95),
+            // centerX: am5.percent(95),
+            // x: am5.percent(95),
+            centerX: am5.percent(50),
+            x: am5.percent(50),
             centerY: am5.percent(100),
             y: am5.percent(100),
-            layout: root.verticalLayout, // 水平或垂直排列。horizontalLayout、verticalLayout
+            // layout: root.verticalLayout, // 水平或垂直排列。horizontalLayout、verticalLayout
         })
     )
     legend.data.setAll(series.dataItems)

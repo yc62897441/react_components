@@ -7,7 +7,7 @@
   "scripts": {
     "build": "webpack --mode production",
     "dev": "webpack serve",
-    "start": "react-scripts start",
+    "start": "set PORT=4000 HOST && react-scripts start",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -38,6 +38,7 @@
     "react-input-files": "^1.2.0",
     "react-router-dom": "^6.8.0",
     "react-scripts": "^5.0.1",
+    "reactflow": "^11.7.4",
     "styled-components": "^5.3.6",
     "xlsx": "^0.18.5"
   },

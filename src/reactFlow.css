@@ -1,0 +1,21 @@
+.node-h1 {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: #fefefe;
+    font-family: 'Roboto', '微軟正黑體', Helvetica, sans-serif;
+}
+
+.node-main {
+    margin: 5px 0;
+    font-size: 1.2rem;
+    font-weight: 400;
+    font-family: 'Roboto', '微軟正黑體', Helvetica, sans-serif;
+}
+
+.node-main > div {
+    margin: 6px 0;
+}
+
+.node-span {
+    font-weight: 600;
+}

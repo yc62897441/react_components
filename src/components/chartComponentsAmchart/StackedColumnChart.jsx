@@ -18,6 +18,7 @@ const ChartContainer = styled.div`
 function createChart(domElementId, chartRef, data, chartTitle) {
     // 初始化圖表 root 元件
     const root = am5.Root.new(domElementId)
+    root._logo.dispose() // 隱藏 amchart logo
     root.setThemes([am5themes_Animated.new(root)])
 
     // 綁定到 useRef，以便在 unmounted 時可以對圖表做 dispose()
@@ -28,22 +29,37 @@ function createChart(domElementId, chartRef, data, chartTitle) {
     // https://www.amcharts.com/demos/pie-chart/
     const chart = root.container.children.push(
         am5xy.XYChart.new(root, {
+            focusable: true,
+            // wheelX: 'panX',
+            // wheelY: 'zoomX',
+            layout: root.verticalLayout,
+            pinchZoomX: true,
             panX: false,
             panY: false,
-            wheelX: 'panX',
-            wheelY: 'zoomX',
-            layout: root.verticalLayout,
+            wheelY: 'none',
         })
     )
+    // 吃的格式
+    // Modify chart's colors
+    chart
+        .get('colors')
+        .set('colors', [
+            am5.color(0x845ec2),
+            am5.color(0xd65db1),
+            am5.color('#FF6F91'),
+            am5.color('#FF9671'),
+            am5.color('#FFC75F'),
+            am5.color('#F9F871'),
+        ])
 
     // // Add scrollbar
     // // https://www.amcharts.com/docs/v5/charts/xy-chart/scrollbars/
-    // chart.set(
-    //     'scrollbarX',
-    //     am5.Scrollbar.new(root, {
-    //         orientation: 'horizontal',
-    //     })
-    // )
+    chart.set(
+        'scrollbarX',
+        am5.Scrollbar.new(root, {
+            orientation: 'horizontal',
+        })
+    )
 
     // Add legend
     // https://www.amcharts.com/docs/v5/charts/xy-chart/legend-xy-series/
@@ -51,6 +67,7 @@ function createChart(domElementId, chartRef, data, chartTitle) {
         am5.Legend.new(root, {
             centerX: am5.p50,
             x: am5.p50,
+            layout: root.horizontalLayout,
         })
     )
 
@@ -77,6 +94,28 @@ function createChart(domElementId, chartRef, data, chartTitle) {
         })
     )
 
+    // Add cursor
+    // https://www.amcharts.com/docs/v5/charts/xy-chart/cursor/
+    chart.set(
+        'cursor',
+        am5xy.XYCursor.new(root, {
+            xAxis: xAxis,
+            yAxis: yAxis,
+        })
+    )
+
+    //匯出
+    let exporting = am5plugins_exporting.Exporting.new(root, {
+        menu: am5plugins_exporting.ExportingMenu.new(root, {}),
+        dataSource: data,
+    })
+
+    exporting.events.on('dataprocessed', function (ev) {
+        // for(var i = 0; i < ev.data.length; i++) {
+        // ev.data[i].sum = ev.data[i].value + ev.data[i].value2;
+        // }
+    })
+
     // Add series
     // https://www.amcharts.com/docs/v5/charts/xy-chart/series/
     function makeSeries(name, fieldName) {
@@ -88,13 +127,16 @@ function createChart(domElementId, chartRef, data, chartTitle) {
                 yAxis: yAxis,
                 valueYField: fieldName,
                 categoryXField: 'category',
+                tooltip: am5.Tooltip.new(root, {
+                    labelText: ' {name} : {valueY}',
+                }),
             })
         )
 
-        series.columns.template.setAll({
-            tooltipText: '{name}, {categoryX}: {valueY}',
-            tooltipY: am5.percent(10),
-        })
+        // series.columns.template.setAll({
+        //     tooltipText: '{name}, {categoryX}: {valueY}',
+        //     tooltipY: am5.percent(10),
+        // })
         series.data.setAll(data)
 
         // Make stuff animate on load
@@ -103,13 +145,15 @@ function createChart(domElementId, chartRef, data, chartTitle) {
 
         series.bullets.push(function () {
             return am5.Bullet.new(root, {
-                sprite: am5.Label.new(root, {
-                    text: '{valueY}',
-                    fill: root.interfaceColors.get('alternativeText'),
-                    centerY: am5.p50,
-                    centerX: am5.p50,
-                    populateText: true,
-                }),
+                locationY: 0,
+                locationX: 0,
+                // sprite: am5.Label.new(root, {
+                //     text: '{valueY}',
+                //     fill: root.interfaceColors.get('alternativeText'),
+                //     centerY: am5.p50,
+                //     centerX: am5.p50,
+                //     populateText: true,
+                // }),
             })
         })
 

@@ -9,6 +9,7 @@ import ChartJs from './contains/ChartJs.jsx'
 // import D3BubbleChart from './contains/D3BubbleChart2.jsx'
 // import D3BubbleChart from './contains/D3BubbleChart3.jsx'
 import D3BubbleChart from './contains/D3BubbleChart4.jsx'
+import DataStructure from './contains/DataStructure.jsx'
 import Dragable from './contains/Draggable.jsx'
 import HeaderOverly from './contains/HeaderOverly.jsx'
 import Homepage from './contains/Homepage.jsx'
@@ -16,6 +17,7 @@ import LazyLoading from './contains/LazyLoading.jsx'
 import MouseEvent from './contains/MouseEvent.jsx'
 import OpenLayers from './contains/Openlayers.jsx'
 import OpenLayers2 from './contains/Openlayers2.jsx'
+import ReactFlow from './contains/ReactFlow.jsx'
 import ScrollDownShow from './contains/ScrollDownShow.jsx'
 import ScrollDownShow2 from './contains/ScrollDownShow2.jsx'
 import SingleComponents from './contains/SingleComponents.jsx'
@@ -80,12 +82,20 @@ table {
 	border-spacing: 0;
 }
 
+/* 讓網頁平滑滾動 */
+html {
+  scroll-behavior: smooth;
+}
+
+
 /* 開啟/隱藏 scrollbar */
 body {
   position: relative;
   overflow: ${({ isHideSrollbar }) => (isHideSrollbar ? 'hidden' : 'scroll')};
 }
 `
+
+import './reactFlow.css'
 
 function App() {
     const [isHideSrollbar, setIsHideSrollbar] = useState(false)
@@ -99,12 +109,14 @@ function App() {
                     <Route path="/ChartComponentsAmchart" element={<ChartComponentsAmchart />} />
                     <Route path="/chartJs" element={<ChartJs />} />
                     <Route path="/d3BubbleChart" element={<D3BubbleChart />} />
+                    <Route path="/dataStructure" element={<DataStructure />} />
                     <Route path="/dragable" element={<Dragable />} />
                     <Route path="/headerOverly" element={<HeaderOverly />} />
                     <Route path="/lazyLoading" element={<LazyLoading />} />
                     <Route path="/mouseEvent" element={<MouseEvent />} />
                     <Route path="/openLayers" element={<OpenLayers />} />
                     <Route path="/openLayers2" element={<OpenLayers2 />} />
+                    <Route path="/reactFlow" element={<ReactFlow />} />
                     <Route path="/scrollDownShow" element={<ScrollDownShow />} />
                     <Route path="/scrollDownShow2" element={<ScrollDownShow2 />} />
                     <Route

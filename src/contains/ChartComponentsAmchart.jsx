@@ -11,6 +11,7 @@ import StackedColumnChart from '../components/chartComponentsAmchart/StackedColu
 import XYChart from '../components/chartComponentsAmchart/XYChart'
 import HighlightingLineChartSeriesOnLegendHover from '../components/chartComponentsAmchart/HighlightingLineChartSeriesOnLegendHover'
 import TreeMapChart from '../components/chartComponentsAmchart/TreeMapChart.jsx'
+import MultipleLinesChart from '../components/chartComponentsAmchart/MultipleLinesChart'
 
 const MainWrapper = styled.div`
     width: 100%;
@@ -36,6 +37,7 @@ function ChartComponentsAmchart() {
                 <XYChart />
                 <HighlightingLineChartSeriesOnLegendHover />
                 <TreeMapChart />
+                <MultipleLinesChart />
             </ContainerWrapper>
         </MainWrapper>
     )

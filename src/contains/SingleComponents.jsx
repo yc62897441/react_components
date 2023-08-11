@@ -8,6 +8,7 @@ import BorderStyle from '../components/BorderStyle.jsx'
 import Bottuns from '../components/components/Bottuns.jsx'
 import Carousel from '../components/Carousel.jsx'
 import CarouselWithTimer from '../components/CarouselWithTimer.jsx'
+import CarouselWithTimerTouchEvent from '../components/CarouselWithTimerTouchEvent.jsx'
 import ComingSoon from '../components/ComingSoon.jsx'
 import HideSrollbar from '../components/HideSrollbar.jsx'
 import HoverInAndOut from '../components/HoverInAndOut.jsx'
@@ -78,6 +79,9 @@ function SingleComponents({ setIsHideSrollbar }) {
                 <SeperateLine />
 
                 <CarouselWithTimer />
+                <SeperateLine />
+
+                <CarouselWithTimerTouchEvent />
                 <SeperateLine />
 
                 <HoverInAndOut />
